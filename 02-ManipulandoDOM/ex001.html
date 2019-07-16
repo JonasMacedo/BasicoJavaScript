@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Eventos Inline</title>
+	</head>
+	<body>
+		<div id='app'>
+			<button onclick ="mostraAlerta()">Clique aqui!</button><br>
+			<br><button onmouseover ="alertaMouse()">Clique aqui!</button>
+		</div>
+		
+		<script>
+			//DOM: são todos os elementos dispostos em tela, JavaScript pode manipular todos eles.	
+			
+			function mostraAlerta(){
+				alert('Botão foi clicado');
+				console.log('Clicaram no botão');
+			}
+			function alertaMouse(){
+				alert('Mouse ta no botão');
+				console.log('Passou sobre o botão');
+			}
+		</script>
+	</body>
+</html>
