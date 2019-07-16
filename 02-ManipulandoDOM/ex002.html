@@ -16,21 +16,32 @@
 			
 			
 			//Criando variavel, para armazernar a referencia da DOM.
+
 			var inputElement =	document.getElementById('setado');
 			//DOCUMENT: variavel global que referencia a arvore de elementos do DOM.
 			
 			console.log(inputElement); //Retorna no console a tag inteira, com ID correspondente.
 			
+			
 			//Referenciando a Tag.
-			var inputElemet02 = document.getElementsByTagName('input')[0]; // Esse metodo sempre retorna um vetor, passando o indice consegue se localizar.
+			var inputElemet02 = document.getElementsByTagName('input')[1]; 
+			/*getElementsByTagName: Esse metodo sempre retorna um vetor, 
+				passando o indice consegue se localizar o elemento, conforme a posição do elemento na DOM.
+			*/
 			console.log('Referenciando a TAG:',inputElemet02);
-				
-			var inputElemet03 = document.getElementsByClassName('nome')[0];//Tambem ira retornar um array, pois uma classe não é unica.
+			
+			//Referenciando a classe.
+			var inputElemet03 = document.getElementsByClassName('nome')[0];
+			/*getElementsByClassName: Tambem ira retornar um array, pois uma classe não é unica, 
+				passando o indice consegue se localizar o elemento, conforme a posição do elemento na DOM.
+			*/
 			console.log('Referenciando a Classe: ',inputElemet03);
 			
 			//Forma mais eficaz,passando a localização do elemento.			
 			var inputElemet04 = document.querySelector('body div#app input');
-			//QuerySelector: permite uma busca melhor pelos elementos da DOM, apenas informando a localização EXATA.
+			/*QuerySelector: permite uma busca melhor pelos elementos da DOM, 
+				apenas informando a localização EXATA, necessario especificar o caminho para se chegar ao elemento.
+			*/
 			
 			console.log('Localização exata: ',inputElemet04);
 			
