@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>Variaveis em JS</title>
+	</head>
+	<body>
+		<script>
+			//Onde vai o codigos JavaScript, deve ser o ultimo elemento do body.
+			
+			
+			//Variaveis em JavaScript possuem tipagem DINAMICA, não precisa informar a tipagem.
+			var nome = "Diego";
+			nome = 2;
+			
+			var idade = 23;//Inteiro.
+			var peso = 83.2;//Float.
+			var humano = true;//Boolean;
+			
+			var segundoNome = ['Alves','Carvalho','Lima'];//Vetor: sempre começa no indice ZERO.
+			
+			var aluno ={ //Objeto.
+				nome: "Bia",
+				sobrenome: segundoNome[1],//Recebendo um array.
+				idade : 25,
+				peso :78.5,
+				humana : true
+			};
+			
+			console.log(segundoNome);//Apresentando conteudo do array.
+			console.log(segundoNome[0]);//Apresentando conteudo da posição do array.
+			
+			console.log(aluno.peso);//Apresentando conteudo do objeto.
+			
+		</script>
+	</body>
+</html>

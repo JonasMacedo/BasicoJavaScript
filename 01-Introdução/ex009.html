@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Condicionais.</title>
+	</head>
+	<body>
+		
+		<script>
+			function retornaSexo(sexo){
+				
+				//Comando IF.
+				if(sexo === 'M'){
+					return 'Masculino';				
+				}else if(sexo === 'F'){
+					return 'Feminino';
+				}else{
+					return 'Inexistente';
+				}
+			}
+			
+			function tipoSexo(sex){
+				
+				//Comando SWITCH.
+				switch(sex){
+					case 'm': 
+						return 'MASCULINO';
+					case 'f':
+						return 'FEMININO';
+					default:
+						return 'OUTRO';
+				}
+			
+			}
+			
+			var resultado = retornaSexo('F');
+			console.log(resultado);
+			
+			var result = tipoSexo('m');
+			console.log(result);
+		</script>
+	</body>
+</html>

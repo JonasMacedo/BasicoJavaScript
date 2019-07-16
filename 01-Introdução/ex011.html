@@ -1,0 +1,27 @@
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<title>Intervalo ou Timeout	</title>
+	</head>
+	<body>
+		<script>
+			//Intervalo e Timeout.
+			
+			function exibeAlgo(){
+				//Será executado pelo periodo de intervalo.
+				console.log('Exuctando o Intervalo');
+			
+			}
+			
+			function umaVez(){
+				console.log('Executa 1 vez.');
+			}
+			
+			//SetInterval(NomeFunção, MileSegundoParaCadaExecusão) = Executa varias vezes.
+			setInterval(exibeAlgo,1000);
+			
+			//SetTimeout(NomeFunção, MileSegundoDeEsperaParaExecusão) = Espera e executa APENAS 1 vez.
+			setTimeout(umaVez,3000);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Operadores Logicos</title>
+	</head>
+	<body>
+		<script>
+			
+			// Estruturas logicas: AND(&&) OR(||) NOT(!).
+			
+			var sexo='M', idade = 10;
+			
+			if(sexo ==='M' || idade >=18){
+				console.log('Ok');
+			}
+			
+			var masculino;//Iniciando a variavel.
+			if(sexo !=='F'){
+				console.log('Sexo não é Feminino');
+				masculino = true;
+			}else{
+				masculino = false;
+			}
+			console.log(masculino);
+			
+			//Iniciando variavel, realizando verificação e incrementando.
+			var feminino = sexo === 'F';
+			console.log(feminino);
+			
+		</script>
+	</body>
+</html>

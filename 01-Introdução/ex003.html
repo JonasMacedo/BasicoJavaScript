@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tratamento de Dados.</title>
+    <style>
+        body{
+            background-color: rgb(105,105,173);
+            color:white;    /*Comentario em CSS*/
+            font: normal 20pt arial;
+        }
+
+        h1{
+            color: rgb(255,212,22);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>    <!--Comentario em HTML-->
+    <p>Já me livrei da maldição!!</p>
+
+
+    <script>
+        //Prompet: Sempre recebe uma String.
+        var n1 = window.prompt('Digite um numero INTEIRO:');
+        var n2 = window.prompt('Informe outro numero REAL: ');
+
+        var soma = n1+n2;
+        window.alert('Resultado: '+soma);//Ira apenas concatenar as Strings.
+
+        /* Conversão para NUMEROS.
+            -Number.parseInt(n): Converte um tipo, para o tipo Inteiro especifico.
+            -Number.parseFloat(n):Converte um tipo, para o tipo Real especifico.
+            -Number(n): Converte um tipo para um tipo numerico, conforme o JS escolher.
+        */
+        soma = Number.parseInt(n1)+ Number.parseFloat(n2);
+        window.alert("Soma correta:"+soma);
+
+        var n3 = Number.parseInt(window.prompt('Informe o ano: '));
+        window.alert('Ano: '+n3);
+
+        /* Conversão para Strings.
+            -String(n):
+            -n.toString():
+        */
+
+        /* Usando Template String ${}.
+            Usado para mesclar mensagens em texto, com informações dinamicas do JavaScript.
+        */
+        window.alert(`soma entre ${n1} e ${n2} é igual a ${soma}`);
+
+
+        var s = 'JavaString';
+        s.length; //Quantos caracteres existem.
+        s.toUpperCase(); //Muda tudo para 'MAIUSCULAS'.
+        s.toLowerCase();//Muda tudo para 'minusculas'.
+
+    </script>
+</body>
+</html>
