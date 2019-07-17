@@ -8,15 +8,20 @@ var todos = JSON.parse(localStorage.getItem('list_todos'))||[];
 //Renderizando os elementos com JS.
 function renderTodos(){
 
-    listElement.innerHTML = '';
+    listElement.innerHTML = '';//LImpando a tela antes de apresenta o conteudo.
 
     for(todo of todos){
+        /* for(elemento of array): trata-se de um for especial para Arrays,
+            percorre todos os elementos do array, e retorna no elemento.         
+        */
+
+        //Criando elementos da lista.
         var todoElement = document.createElement('li');
         var todoText = document.createTextNode(todo);
         
         //Link para remoção de elemento.
         var linkElement = document.createElement('a');
-        var linkText = document.createTextNode('Excluir');
+        var linkText = document.createTextNode('Excluir');//Criando texto para o link a.
         linkElement.setAttribute('href','#');
 
         linkElement.appendChild(linkText);
@@ -49,7 +54,7 @@ buttonElement.onclick = function addTodo(){
 
 function deleteTodo(pos){
 
-    //Splice(posição, itens):Remove itens de arrays, baseado na posição.
+    //Splice(posição, ItensParaRemover):Remove itens de arrays, baseado na posição passada.
     todos.splice(pos, 1);
     renderTodos();
     saveToStorage();
@@ -63,13 +68,3 @@ function saveToStorage(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
