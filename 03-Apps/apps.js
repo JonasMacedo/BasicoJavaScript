@@ -3,7 +3,9 @@ var listElement = document.querySelector('#app ul');
 var inputElement = document.querySelector('#app input');
 var buttonElement = document.querySelector('#app button'); 
 
+//Elementos estão vindo do Storage, em formato json, precisam ser convertidos em um array simples.
 var todos = JSON.parse(localStorage.getItem('list_todos'))||[];
+// Caso não consiga retornar um valor aceitavel da memoria do navegador(storage), ira retornar um array vazio.
 
 //Renderizando os elementos com JS.
 function renderTodos(){
@@ -60,11 +62,15 @@ function deleteTodo(pos){
     saveToStorage();
 }
 
-//Salvando conteudos em memoria local.
+//Salvando conteudos no Storage, ou seja em memoria local.
 function saveToStorage(){
+
+    /* Responsavel por pegar a lita de elementos, 
+        e salvar na memoria local do navegador
+    */
 
     //JSON: JavaScript Object Notation.
     localStorage.setItem('list_todos',JSON.stringify(todos));
-
+    //Convertendo o vetor todos para JSON.
 
 }
