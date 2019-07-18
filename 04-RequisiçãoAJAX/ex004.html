@@ -72,7 +72,7 @@
         var num = Number(inputElement.value);
         var divElement = window.document.getElementById('resp');
         
-        checarIdade(num).
+        checarIdade(num).//Usando a promise.
         then(function(response){
             divElement.innerHTML+=`<p>Maior de idade${num}</p>`;
         }).catch(function(error){
