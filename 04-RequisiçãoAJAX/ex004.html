@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises 02</title>
+    <style>
+        /*Usado apenas para teste.*/
+        header{
+            text-align: center;
+            color: white;
+            font-style: oblique;
+        }
+        body{
+            background-color: blue;
+
+        }
+        section{
+            background-color: white;
+            border-radius: 7px;
+            padding: 10px;
+            margin: auto;
+            box-shadow: 3px 3px 10px black;
+        }
+        footer{
+            text-align: center;
+            color: white;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador</h1>
+    </header>
+    <section>
+        <div>
+            <p>Informe sua idade:
+                <input type="number" name="idade" id="idade">
+                <input type="button" value="Verificar" id="btn1">
+            </p>
+        </div>
+        <fieldset>
+            <legend>Resultado</legend>
+            <div id="resp">
+
+            </div>
+        </fieldset>
+    </section>
+    <br>
+    <footer>&copy;Verificador</footer>
+    <script>
+
+        var buttonElement = window.document.getElementById('btn1');
+        buttonElement.addEventListener('click',verifcarIdade); 
+
+        function checarIdade(num) {
+            return new Promise(function(resolve,reject){
+    
+                if(num>=18){
+                    resolve(num);
+                }else{
+                    reject(num);
+                }
+            });
+        }
+        
+       function verifcarIdade(){
+           
+        var inputElement = window.document.getElementById('idade');    
+        var num = Number(inputElement.value);
+        var divElement = window.document.getElementById('resp');
+        
+        checarIdade(num).//Usando a promise.
+        then(function(response){
+            divElement.innerHTML+=`<p>Maior de idade${num}</p>`;
+        }).catch(function(error){
+            divElement.innerHTML+=`<p>Menor de idade${num}</p>`;
+        })
+       }
+
+    </script>
+</body>
+</html>
