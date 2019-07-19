@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax</title>
+    <style>
+        /*Usado apenas para teste.*/
+        header{
+            text-align: center;
+            color: white;
+            font-style: oblique;
+        }
+        body{
+            background-color: blue;
+
+        }
+        section{
+            background-color: white;
+            border-radius: 7px;
+            padding: 10px;
+            margin: auto;
+            width: 600px;
+            box-shadow: 3px 3px 10px black;
+        }
+        fieldset{
+            border-radius: 8px;
+        }
+        footer{
+            text-align: center;
+            color: white;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de GitHub.</h1>
+    </header>
+    <section>
+        <div>
+            <p>Informe seu usuario GitHub:
+                <input type="text" name="nome" id="nome" autofocus>                
+                <input type="button" value="Verificar" id="btn1">
+            </p>
+        </div>
+        <fieldset>
+            <legend>Resultado</legend>
+            <div id="resp">
+                <ul></ul>
+            </div>
+        </fieldset>
+    </section>
+    <br>
+    <footer>&copy;Verificador de GitHub</footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+    <script>
+        //Referenciando elemento da DOM.
+        var divElement = window.document.getElementById('resp');
+        var ulElement = window.document.querySelector('ul');
+        var buttonElement = window.document.getElementById('btn1');
+        
+        //Ouvindo os ventos com listener.
+        buttonElement.addEventListener('click',verifcarGitHub); 
+
+        //Renderizando na tela os elementos vindos do servidor.
+        function renderLista(listaRep){
+
+            for(repo of listaRep){
+              
+                const textElement = window.document.createTextNode(repo.name);
+                const liElement = window.document.createElement('li');
+
+                liElement.appendChild(textElement);
+                ulElement.appendChild(liElement);
+
+            }
+        }
+        
+        function verifcarGitHub(){
+
+            var inputElement = window.document.getElementById('nome');
+            var texto = inputElement.value;
+            
+            if(inputElement.value ==0){
+                window.alert("Informe um usuario!!");
+            }else{
+
+                //Usando axios.
+                axios.get(`https://api.github.com/users/${texto}/repos`)
+                .then(function(response){
+                    
+                    //Usando promise.
+                    console.log(response.data);
+                    renderLista(response.data);
+                })
+            }
+        }
+        
+
+    </script>
+</body>
+</html>
