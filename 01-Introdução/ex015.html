@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IF Aninhado.</title>
+</head>
+<body>
+    <!--IF Aninhado:
+        trata-se de um IF, que em seu interior possui um ou varias outras condições IF.
+    -->
+
+    <script>
+        
+        var nota = prompt("Informe a nota abaixo:");
+        var res;
+        if(nota >= 60){
+            //Condição aninhada.
+            res="Aprovado";
+            if(nota >=75){
+                if(nota ==100){
+                    res +=" com Excelencia!!"
+                }else if(nota >=80){
+                    res += " com Louvor.";
+                }else{
+                    res += " com nota satisfatoria.";    
+                }
+            }else{
+                res += " com nota normal."
+            }
+        }else if(nota >= 40){
+            res ="Aluno em recuperação."
+        }else{
+            //condição aninhada.
+            res="Reprovado"
+            if(nota>=20){
+                res += " por nota baixa."
+            }else{
+                res += " direto."
+            }
+        }
+
+        document.write(res);
+
+    </script>
+
+</body>
+</html>
