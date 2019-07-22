@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vetor part01.</title>
+</head>
+<body>
+    
+    <script>
+        /*  Vetor/Array.
+        - Variavel com diversos, espaços.
+        - É composto por vario elementos: espaço em memoria, valor armazenado,indice ou key.
+        - Variaveis compostas, devem ser capazes de armazenar varios valores em uma mesma estrutura.
+        - Todos os arrays em JS começa com indice ou key ZERO.
+        */
+
+        //Criando vetor, sem informar o tamanho ele fica dinamico.
+        var cor =[];
+    
+        //push(): Adiciona elementos em um array. na ultima posição.
+        cor.push("Preto");
+        cor.push("Branco");
+        cor.push("Vermelho");
+        cor.push("Verde");
+        cor.push("Azul");
+
+        window.document.write(cor[3]);
+
+        //Adicionando elementos pelo indice do vetor.
+        cor[5]="Roxo";
+        cor[6]="Prata";
+        cor[7]="Laranja";
+        document.write(cor[6]);
+
+        var itens =["Faca","Bota","Corda","Lanterna","Luvas","Chave","Canivete"];
+        var mochila=[];
+
+        //Adicionando o elemento do vetor em outro.
+        //mochila.push(itens[2]);
+        //window.document.write("<br>",itens[2]);
+
+        //Usando o elemento de um vetor, como referencia de indice para outro.
+        mochila.push(3);
+        mochila.push(0);
+        mochila.push(5);
+        window.document.write("<br>",itens[mochila[3]]);
+        window.document.write("<br>",itens[mochila[0]]);
+        window.document.write("<br>",itens[mochila[5]]);
+
+        let num =[5,8,2,9,3]
+
+        console.log(num);
+
+        //push(): Adiciona elementos em um array. na ultima posição.
+        num.push(12);
+        console.log(num);
+        console.log(`o vetor tem ${num.length} posições.`)
+
+        //sort(): organiza os elementos de um vetor em forma cresente ou alfabetica.
+        num.sort();
+        console.log('Ordenado: '+num);
+
+        num.push(1);
+        console.log(num);
+
+        num.sort();
+        console.log(`Vetor ordenado: `+ num);
+
+        console.log(`O primeiro valor do vetor é ${num[0]}`);
+
+    </script>
+</body>
+</html>
