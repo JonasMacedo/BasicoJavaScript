@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vetor part03</title>
+</head>
+<body>
+    <script>
+        /* Metodos de vetores.
+            - Reverse: Inverte os elementos no array.
+            - IndexOf: Realiza buscas no vetor, buscando a posição do elemento no array, se não localizar retornar -1.
+            - Concat: Une o conteudo de dois vetores em um só.
+            - Join: Une todos os elementos de um vetor, em uma UNICA variavel, em forma de string, separando os lementos por virgurla.
+        */
+
+       var mochila=[], mochila2=[], mochilao=[], pos;
+       
+       mochila.push("Faca");
+       mochila.push("Corda");
+       mochila.push("Chave");
+       mochila.push("Lanterna");
+       mochila.push("Cantil");
+       mochila.push("Canivete");
+       mochila.push("Binócolo");
+
+       //IndexOf: buscando a posição do elemento no array, se não localizar retornar -1.
+       pos = mochila.indexOf("Canivete");
+
+        if(pos<0){
+            window.document.write("O item não esta na mochila");
+        }else{
+            window.document.write("O item esta na mochila, na posição: ",pos,"<br>");
+        }
+
+
+        var num = [1,8,9,7,2,4,3,0,6,5];
+        for(i =0; i < num.length; i++){
+            window.document.write("elemento: ",num[i],"<br>");
+        }
+
+        //Usando sort, para ordenar a lista
+        num.sort();
+        window.document.write("<br>lista Ordenada:<br>")
+        for(i =0; i < num.length; i++){
+            window.document.write("elemento: ",num[i],"<br>");
+        }
+
+        //Usando reverse, para realizar a reverção da lista.
+        num.reverse();
+        window.document.write("<br>lista Reversa:<br>")
+        for(i =0; i < num.length; i++){
+            window.document.write("elemento: ",num[i],"<br>");
+        }
+
+        var numeros;
+
+        //Usando o metodo Join, unindo os lementos do vetor em uma unica variavel.
+        numeros = num.join();
+        window.document.write("<br>Usando Join: ",num,"<br>");
+
+        mochila2.push("Meias");
+        mochila2.push("Luvas");
+        mochila2.push("Gorros");
+        mochila2.push("Calças");
+        mochila2.push("Chinelos");
+        mochila2.push("Escova");
+        mochila2.push("Barbeador");
+
+        //Concatenando arrays.
+        mochilao = mochila.concat(mochila2);
+        window.document.write("<br>Mochilão:<br>")
+        for(x=0; x < mochilao.length; x++){
+            window.document.write(mochilao[x],"<br>")
+        }
+
+    </script>
+</body>
+</html>

@@ -4,7 +4,11 @@
 	</head>
 	<body>
 		<script>
-		
+			/* Funões.
+    			- São ações excutadas assim que chamadas, ou ativado por um evento.
+    			- Podem receber parametros e retornar um resultado.
+			 */
+
 			function soma(numero1, numero2){
 				// cuidado com os escopos de variaveis.
 				var resultado = numero1+numero2;
@@ -14,6 +18,16 @@
 			
 			var resultado = soma(1,2);
 			console.log(resultado);
+
+			//Variavel recebendo função em sua criação.
+			let fatorial = function calc(n){
+				var fat=0;
+				for(var c =n; c > 1; c--){
+					fat *=c;
+				}
+				return fat;
+			}
+			console.log('Fatorial de 5: '+fatorial(5));
 			 
 		</script>
 	</body>

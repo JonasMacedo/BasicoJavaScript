@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vetor part02.</title>
+</head>
+<body>
+    
+    
+    <script>
+        /* Metodos de vetores.
+            - unShift: insere elementos no array, na primeira posição do array.
+            - Pop: remove elementos no final do array, os ultimos elementos a que forma inceridos.
+            - splice: remove elementos no meio do vetor.
+            - Shift: Remove o elemento no incio do vetor.
+        */
+
+        var mochila = [];
+        mochila.push("Faca");
+        mochila.push("Corda");
+        mochila.push("Lanterna");
+        mochila.push("Botina");
+        mochila.push("Chave");
+        mochila.push("Canivete");
+        mochila.push("Pedra de fogo");
+
+        for(i =0; i < mochila.length;i++){
+            window.document.write(mochila[i],"<br>");    
+        }
+
+        //unShift: insere elementos no array, na primeira posição do array.
+        mochila.unshift("Cantil");
+
+        window.document.write("<br> Testando o metodo unShift!<br>");
+        for(i =0; i < mochila.length;i++){
+            window.document.write(mochila[i],"<br>");    
+        }
+
+        //Pop: remove elemento que estiver no final do array.
+        mochila.pop();
+        mochila.pop();
+        window.document.write("<br> Testando o metodo Pop!<br>");
+        for(i =0; i < mochila.length;i++){
+            window.document.write(mochila[i],"<br>");    
+        }
+
+        //- Shift: Remove o elemento no incio do vetor.
+        mochila.shift();
+        window.document.write("<br> Testando o metodo Shift!<br>");
+        for(i =0; i < mochila.length;i++){
+            window.document.write(mochila[i],"<br>");    
+        }
+
+        /*- Splice(posição,qtdElementos): Remoção de elementos no meio do vetor.
+            Passando a posição do elemento e quantidade de elementos, 
+            apartir da posição sera removido a quantidade de elementos informado.
+        */
+        mochila.splice(2,1);
+        window.document.write("<br> Testando o metodo Splice!<br>");
+        for(i =0; i < mochila.length;i++){
+            window.document.write(mochila[i],"<br>");    
+        }
+
+    </script>
+</body>
+</html>
