@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usando o Let.</title>
+</head>
+<body>
+    
+    <script>
+        /*Usano o Let.
+            - Na declaração da variavel pode se usar o let de duas formas.
+            - Para limitar ela a apenas um bloco de código, fora deste bloco ela não existe.
+            - Para usa-la como variavel global.
+        */
+
+        var num =10;
+
+        if(num=10){
+            let teste = 7;//Criando let, só existira no bloco.
+            window.document.write("Dentro do bloco valor de num: "+num+"<br>");
+            num=5;
+            window.document.write("Valor do let: "+teste+"<br>");
+        }
+        window.document.write("Fora do bloco valor de num: "+num+"<br>");
+       // window.document.write("Valor do let: "+teste);//Variavel let não existe mais.
+
+        let carga=15;// Declarando let global.
+
+        if(carga > 9){
+            window.document.write("<br>Varlo da carga: "+carga+"<br>");
+            carga = 3;
+        }
+        window.document.write("Varlo da carga: "+carga+"<br>");
+    </script>
+</body>
+</html>
