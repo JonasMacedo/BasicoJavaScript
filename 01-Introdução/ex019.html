@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matrizes.</title>
+</head>
+<body>
+    
+    <script>
+        /*  Conceito de Matrizes.
+            - Variavel com diversos, espaços.
+            - É composto por vario elementos: espaço em memoria, valor armazenado,indice ou key.
+            - Trata-se de uma variavel composta, capaz de armazenar varios valores em uma mesma estrutura.
+            - Trata-se de dois arrays que constituem um.
+            - Assim como os vetores"arrays" seus indices começam em zero, 
+        */
+
+        var mochila = []//Sera usado como matriz.
+
+        var item1=["Corda",2],//vetor misto.
+            item2=["Faca",3],
+            item3=['Kit Medico',2],
+            item4=['Prego',25];
+
+        mochila.push(item1);
+        mochila.push(item2);
+        mochila.push(item3);
+        mochila.push(item4);
+
+        //window.document.write(mochila[0][0]+' - '+mochila[0][1]);
+        for(i=0; i < mochila.length;){
+            for(x=0; x <= mochila.length;i++){
+                window.document.write(mochila[i][x]+' - '+mochila[i][1]+"<br>");
+            }
+            
+        }
+    </script>
+</body>
+</html>
