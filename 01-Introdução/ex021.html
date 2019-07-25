@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tratando erros.</title>
+</head>
+<body>
+    
+    <script>
+        /*Tratamento de erros com Try Catch Finally.
+            - Dentro do bloco try irá a primeira parte do codigo, 
+            ao qual ira ser tratado um possivel erro. 
+            - Quando um erro é identificado, é gerado uma Exception, 
+            eo bloco try é encerrado aotumaticamente.
+            - Tambem pode ser gerado uma exceção para determinados casos, 
+            com o uso do " throw new Error()", forçando a execução do catch.
+            - Finnally é executado indiferente se for localizado um erro ou não, 
+            muito usado após a localização do erro para correções.
+        */
+
+        try{
+            let num = prompt("Digite um valor");
+            if(num>10){
+                throw new Error("Valor invalido");// Gerando exceção.   
+            }
+            document.write("Valor: "+num);
+        }catch(e){
+            document.write("Erro pego no TryCatch!! ");
+        }finally{
+            //geralmente usado para correções, após ser localiado os posiveis erros.
+            num =10;
+            document.write("<br>Valor corrigido: "+num+"<br>");
+        }
+
+        try{
+            document.writi("Olá mundo!");//Forçando o erro.
+            document.write("Olá mundo!");//Não chega a ser executada.
+        }catch(e){
+            document.write("Erro pego no TryCatch!!");
+            console.log('Mensagem de erro: '+ e.message)
+        }
+
+    </script>
+</body>
+</html>
