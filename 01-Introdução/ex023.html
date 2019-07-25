@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalhando na Dom part02</title>
+</head>
+<body>
+    
+    <p id="texto">Paragrafo qualquer!</p>
+    <input type="text" name="cxtexto" id="cxtexto" value="Texto"><br>
+    <br>    
+    <fieldset style="width: 300px">
+        <legend>Campo de Teste</legend>
+        <div style="mask-border: 2px" id="resp"></div>
+    </fieldset>
+    
+    <script>
+        /* Mesclando informação na estrutura da Dom.
+            - Usando o metodo InnerHTML, é possivel usar tag html para formatação na saida de conteudos.
+        */
+
+        //Referenciando o elemento pelo ID, recuperando o valor contido.
+        var elementText = window.document.getElementById("cxtexto").value;
+        console.log(elementText);
+
+        //Referenciando elemento por ID, e recuperando o valor do paragrafo.
+        var elementP = window.document.getElementById("texto").innerHTML;
+        console.log(elementP);
+
+        var elemetDiv = window.document.getElementById("resp").innerHTML="<p>Paragrafo de teste de JavaScript.</p>"
+
+
+
+    </script>
+</body>
+</html>
