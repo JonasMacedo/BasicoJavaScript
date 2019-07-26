@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usando a Tag Name.</title>
+</head>
+<body>
+
+    <h1>Conceitos de uso do TagName.</h1>
+
+    <p>Corda</p>
+    <p>Machado</p>
+    <p>Canivete</p>
+    <p>Binocolos</p>
+    <p>Canivete</p>
+    <h2>Titulo de Teste</h2>
+
+    <script>
+        /* Usando a seleção por tag.
+            - Consistem em passar a tag desejada, e o metodo retornará 
+            todos os elementos da tag especificada, em forma de um vetor.
+            - Caso o retorno seja um vetor grande, pode se definir uma variavel do tipo array, 
+            e trabalhar com ela como um array qualquer.
+        */
+
+        //Referenciando os elementos pelo TagName, retornara um array.
+        var tagsP = window.document.getElementsByTagName("p");
+        for(i=0; i< tagsP.length; i++){
+            console.log(tagsP[i].innerHTML);
+        }
+
+        //Referenciando todas as tags da DOM.
+        var AllTags = document.getElementsByTagName("*");
+
+        AllTags[3].style.color = "#f00";
+
+    </script>
+</body>
+</html>

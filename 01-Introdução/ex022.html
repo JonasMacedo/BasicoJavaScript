@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalhando na DOM part01.</title>
+    <style>
+        body{
+            background: purple;
+            font: normal 18pt arial;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1> Iniciando com a estudos a DOM. </h1>
+    <p id='msg03'>Aqui vai um resultado.</p>
+    <p class='msg04'>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id='msg'> Clique em mim</div>
+    <div name='msg2'>Aperte aqui</div> 
+    
+    <script>
+        //Seleção por ID ou nome.
+
+        //getElementById(identificação): seleciona o elemento, a identificação deve ser UNICA.
+        var d = window.document.getElementById('msg');
+        d.style.background = 'green';
+        d.innerText = 'Estou aguardando...';
+
+        //getElementsByName(nome)[posição]:Seleciona o elemento pelo nome conforme a posição.
+        var d2= window.document.getElementsByName('msg2')[0];
+        d2.style.color = 'red';
+        d2.style.fontSize = "22px";
+        d2.style.background = "white";
+        d2.innerText = "Mais informações!!";
+
+        //querySelector(tag/identificação): Mais indicada pelo ecmascript.
+        var d3 = window.document.querySelector('p#msg03');
+        d3.style.color = 'yellow';
+        //Obs.: (#)Usado para Identificadores (.)Usado para classes.
+        var d4 = window.document.querySelector('p.msg04');
+        d4.style.background= 'blue';
+    </script>
+
+</body>
+</html>

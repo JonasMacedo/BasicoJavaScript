@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Usando QuerySelectorAll</title>
+    <style>
+        .titulo{
+            color: #f00;
+            font-size: 20px;
+            text-decoration: underline;
+        }
+        div{
+            border: 1px solid #000;
+            padding: 10px;
+            display: inline-block;
+        }
+        .quadro{
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Utilizando QuerySelectorAll.</h1>
+    <h2 class="titulo">QuerySelectorAll</h2>
+    <p>O QuerySelectorAll() é um metodo que retorna os elementos do documento que correspondem a uma classe de CSS ou uma tag especifica</p>
+    <h3 class="titulo">Aulas de JavaScript.</h3>
+    <p>Existe muita coisa para estudar em JavaScript.</p>
+    <p class="titulo">Tem que praticar muito os conteudos para fixa-los bem.</p>
+    <div>
+        <legend>Div Original.</legend>
+        <h4>Testando elementos na div.</h4>
+        <p>Este texto esta dentro de uma div.</p>
+        <p>Este tambem.</p>
+    </div>
+    <div class="quadro">
+        <legend>Div Clonada.</legend>
+        <h4>Testando elementos na div.</h4>
+        <p>Este texto esta dentro de uma div.</p>
+        <p>Este tambem.</p>
+    </div>
+    <script>
+        /* QuerySelectorAll:
+            -> O metodo faz uma seleção, buscando o elemento que foi informado, 
+            este metodo tambem retorna tags.
+            -> A diferença deste metodo de busca, é que ele pode buscar por tags que usem classes, 
+            ou por uma tag que esteja dentro de outra tag.
+            -> Este metodo ajuda a trabalhar com elementos mais complexos da DOM.
+        */
+
+        //Referenciando todas as tags P da DOM.
+        var tagsP = window.document.querySelectorAll("p");
+        console.log(tagsP[0].innerHTML);
+        tagsP[0].style.color="blue";
+
+        //Referenciando todas as tags que usam a classe titulo.
+        var tagTitulos = document.querySelectorAll(".titulo")
+        console.log("Retornando todos os elementos quem usam a classe Titulo.");
+        for(i=0;i<tagTitulos.length;i++){
+            console.log(tagTitulos[i].innerHTML);
+        }
+
+        //Referenciando todas as tags P que usam a classe titulo.
+        var tagP = document.querySelectorAll("p.titulo");
+        console.log("Tag P, usando a classe titulo: "+tagP[0].innerHTML);
+
+        //Referenciando apenas um elemento contido em outro.
+        var tagVerd = document.querySelectorAll("div > p");
+        for(i=0; i< tagVerd.length; i++){
+            tagVerd[i].style.color="green";    
+        }
+
+        var divClone = document.querySelectorAll("div.quadro > *");
+        for(x=0; x < divClone.length; x++){
+            divClone[x].style.color = "purple";
+        }
+    </script>
+</body>
+</html>
