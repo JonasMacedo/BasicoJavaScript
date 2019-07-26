@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Datas e Horas</title>
+</head>
+<body>
+    
+    <script>
+        /* Manipulando Datas e horas.
+            Geralmente precisa ser tratada a saida, pois os metodos 
+            devolvem as informações conforme os padrões do JS.
+            Essas informações são obtidas do sistema operacional local, 
+            onde o arquivo JS esta rodando. 
+            - getDay(): retorna os dias da semana, como numerais.
+            - getDate(): retorna o dia do mês.
+            - getMonth(): retorna o mês, em forma de numeros.
+            - getFullYear(): retona o ano completo com os 4 digitos.
+            - getHours(): retorna a hora.
+            - getMinutes(): retorna os minutos.
+            - getSeconds(): retorna os segundos.
+            - toLocaleDateString(): retorna a data.
+            - toLocaleString(): retorna a data e a hora.
+        */
+
+        var data = new Date();
+        document.write("Retorna a data padrão EUA: "+data+"<br>");
+
+        var dia = data.getDay();
+        document.write("Retorna o dia da semana: "+dia+"<br>");
+
+        var mes = data.getMonth();
+        document.write("Retorna o mes do ano: "+mes+"<br>");
+
+        var ano = data.getFullYear();
+        document.write("Retorna o ano: "+ ano);
+
+        var meses = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+        var semanas = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sabado"];
+
+        document.write("<br><br>"+semanas[dia]+", "+ dia +" de "+meses[mes]+" de "+ano);
+
+    </script>
+
+</body>
+</html>

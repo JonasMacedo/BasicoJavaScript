@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metodos matematicos part02.</title>
+</head>
+<body>
+    
+
+    <script>
+        /* Métodos matematicos.
+            A classe "math" é uma especie de biblioteca, com varios metodos e contantes 
+            disponiveis para auxiliar em operações matematicas.
+            - abs(x): retorna o valor absoluto de x. 
+            - acos(x): retorna o arco cosseno de x.
+            - asin(x): retorna o arco seno de x.
+            - atan(x): retorna o arco tangente de x, com valores entre PI/2 e PI/2 radiano.
+            - atan2(y,x): retorna o arco tangente do quociente dos argumentos y e x.
+            - ceil(x): retorna o valor de X arredondado para cima.
+            - cos(x): retorna o cosseno de X em radianos.
+            - exp(x): retorna o valor de x.
+            - pow(x,y): retorna o valor de x elevado a y. 
+        */
+
+        var valor = -10;
+        var num = Math.abs(valor);
+
+        document.write("Valor absoluto: "+num);
+
+        //Arredondando para mais.
+        var redondo = 10.3;
+        var r = Math.ceil(redondo);
+        document.write("<br>Arredondando: "+r);
+
+        
+        //Potencias.
+        var pot = 4;
+        var p = Math.pow(pot,2);
+        document.write("<br>Potencia: "+p);
+
+        //Numeros randomicos.
+        var ran = 60;
+        var numRan = Math.round(Math.random()*ran);
+        document.write("<br>Numero randomico: ",numRan);
+
+
+    </script>
+</body>
+</html>
