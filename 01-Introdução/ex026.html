@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manipulando Formularios.</title>
+</head>
+<body>
+    <form action="#" method="POST" name="formulario01" id="formulario01">
+        <fieldset style="width: 300px">
+            <legend>Manipulando Formulario</legend>
+            <label>Nome:</label>
+            <input type="text" name="fNome" id="Fnome" placeholder="Digi o nome"><br>
+            <label>Senha: </label>
+            <input type="password" name="fSenha" id="fSenha"><br>
+            <input type="submit" name="btnEnviar" value="Enviar">
+        </fieldset>
+    </form>
+    <br><br>
+    <form action="#" method="POST" name="formulario02" id="formulario02">
+        <fieldset style="width: 300px">
+            <legend>Formulario Clonado.</legend>
+            <label>Nome:</label>
+            <input type="text" name="CLNome" id="CLnome"><br>
+            <label>Senha: </label>
+            <input type="password" name="CLSenha" id="CLsenha"><br>
+            <input type="submit" name="CLEnviar" value="Enviar">
+        </fieldset>
+    </form>
+    <br><hr>Manipulado pelo JS:<br>
+
+    <script>
+        /* Manipulando formularios.
+            - Usando o metodo "form", podemos manipular os elementos da DOM de um formulario,
+            este metodo retorna uma coleção do tipo HTML colection, Seu uso é similar ao uso de arrays.
+        */
+
+        //Referenciando o formulario.
+        var qtdForm = document.forms.length;// Obtendo quantidade de formularios na DOM.
+        console.log("Retornando a quantidade de formularios: "+qtdForm);
+
+        //Manipulando o forms pelo indice de elementos.
+        var fm = document.forms[1].id;//a manipulação é similar a de um array.
+        console.log("Retornando o id do formulario: "+fm);
+
+        //Manipulando elementos da form, pelo nome do item.
+        var nomeItem = document.forms.namedItem("formulario01").innerHTML;
+        console.log(nomeItem);
+        //document.write(nomeItem);
+
+        //Manipulando os elementos.
+        var formElements = document.forms["formulario02"].elements[3].value;
+        console.log(formElements);
+
+        //Estilizando items do form.
+        var elementForm = window.document.forms[0];
+        var itemForm = elementForm.elements;
+        itemForm[0].style.backgroundColor ="gray";
+        itemForm[0].style.color ="yellow";
+
+    </script>
+</body>
+</html>
