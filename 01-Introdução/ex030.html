@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos.</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conceito de eventos.</h1>
+
+    <div id="div1" onmouseover="mudaCor(this,'red')" onmouseout="mudaCor(this,'blue')" >
+        teste.        
+    </div>
+    <br>
+    <button onclick="ola()" >Clique aqui</button>
+
+    <script>
+        /* Eventos.
+            - Eventos que podem ser realizados pelo JavaScript.
+            - Os eventos podem ser ativados atraves de metodos fornecido pelo DOM.
+            - Os eventos tambem podem ser ouvidos pelo JavaScript, com os Listeners.
+
+            onclick="mudaPos(this)"
+        */
+        
+        function mudaCor(obj,cor){
+            obj.style.backgroundColor=cor;
+        }
+
+        function mudaPos(obj){
+            obj.style.position = 'absolute';
+            obj.style.left = Math.random()* 500 +"px";
+            obj.style.top = Math.random()* 500 + "px";
+        }
+
+        function ola(){
+            
+            var elementDiv = window.document.getElementById('div1');
+
+            var data = new Date();
+            var hora = data.getHours();
+            
+            console.log(elementDiv)
+            if(hora < 12){
+                elementDiv.innerText = 'Bom dia';
+            }else if(hora < 18){
+                elementDiv.innerText = 'Boa tarde';
+            }else{
+                elementDiv.innerText = 'Boa noite';
+            }
+
+        }
+
+    </script>
+</body>
+</html>
