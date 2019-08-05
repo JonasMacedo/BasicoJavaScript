@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+        
+        const array = [1,2,3];
+
+        //Sem uso da arrow function.
+        const arrayModificado = array.map(function mapear(value){
+            return value*2;
+        });
+        console.log(arrayModificado);
+
+        //Usando Arrow Function.
+        const arrowMethod = array.map(value => value * 2 );
+        console.log("Usando Arrow Function: ",arrowMethod);
+
+        class Tabuada{
+            
+            constructor(numero, valores){
+                
+                // Armazenando valores, na variavel de classe.
+                this.numero = numero;
+                this.valores= valores;
+            }
+                
+            get tabela(){
+                //retornando um array de objetos.
+                return this.valores.map(function(valor){
+                    return {
+                        numero: this.numero, 
+                        valor: valor, 
+                        resultado: this.numero * valor
+                    }
+                }.bind(this));
+                    /*  Bind(this): faz a assosição com o this da classe, 
+                    pois a função map não enchegar em seu escopo.*/
+            };
+
+            get tabelaArrow(){
+                return this.valores.map(valor =>{
+                    return {
+                        numero: this.numero;
+                        valor: valor;
+                        resultado: this.numero * valor;
+                    }
+                })
+            }
+        }
+
+        var x = new Tabuada(4,[2,3,4]);
+        console.table(x.tabela);
+    </script>
+</body>
+</html>

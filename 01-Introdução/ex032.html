@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Functions 02</title>
+</head>
+<body>
+
+    <h1>Usando Arrays e Arrowfunctions.</h1>
+
+    <script>
+    
+        window.alert("teste");
+
+        const usuario = [
+            {nome:'Jonas', idade: 26, ocupacao: 'Estudante', empresa: 'nenhum'},
+            {nome: 'Diego', idade: 21, ocupacao: 'Professor', empresa: 'Google'},
+            {nome:'Marcos', idade:28, ocupacao: 'Analista', empresa:'Google'},
+        ];
+
+
+        // Retornando apenas a idade de dentro do vetor de objetos.
+
+        const idades = usuario.map(function(usuario){
+            /* Map(item,indice): Usado para per correr um vetor 
+                e retornar algo dele.
+            */
+            return usuario.idade;
+        });
+        console.log(idades);
+
+            // Arrow funtion e Array.
+        const idadeResp = usuario.map(usuario => usuario.idade);
+        console.log("Corrigido:",idadeResp);
+
+
+        // Retornando apenas quem trabalha no Google.
+
+        const trabalhadores = usuario.filter(function(usuario,empresa){
+            /*  Filter: filtra os elementos de um vetor, 
+                retornando sempre um true ou false.
+            */
+            if((usuario.empresa == 'Google') && (usuario.idade>18)){
+                return usuario;
+            }
+        });
+        console.log("Trabalhadores: ",trabalhadores);
+
+            // Arrow funtion e Array.
+        const trabalhoResp = usuario.filter(
+            usuario => usuario.empresa === "Google" && usuario.idade >= 18
+        );
+        console.log("Corrigido: ",trabalhoResp);
+
+
+        // Localizando o primeiro funcionario da Google.
+
+        const Google = usuario.find(function(usuario){
+            /* Find(array): Usado para verificar se exite uma informação
+            no array ou para encontra-la, restornando um true ou false.
+            */
+            if(usuario.empresa == "Google"){
+                return usuario;
+            }
+        });
+        console.log("Empresa: ",Google);
+
+            // Arrow funtion e Array.
+        const googleResp = usuario.find(usuario => usuario.empresa == "Google");
+        console.log("Corrigido",googleResp);
+
+
+        // Usando duas funções de arrays.
+
+        const multiplicador = usuario.map(function(usuario){
+            /*if((usuario.idade * 2)<=50){
+                return usuario;
+            }*/
+            if(usuario.idade*2 <= 50){
+                return usuario;                
+            }
+        });
+        console.log("Multiplicador: ",multiplicador);
+
+            // Arrow funtion e Array.
+        const calculoResp = usuario
+            .map(usuario =>({...usuario, idade: usuario.idade *2}))
+            .filter(usuario => usuario.idade <=50);
+
+        console.log("Corrigido: ",calculoResp);
+    
+    </script>
+</body>
+</html>
