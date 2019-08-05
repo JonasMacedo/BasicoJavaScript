@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Short Object Syntax.</title>
+</head>
+<body>
+    <h1>Conceito de Short Object Syntax</h1>
+    <p>Abra a perspectiva de debug do brownser.</p>
+    <script>
+        /* Sintaxe Curta de Objeto.
+            Quando o nome da propriedade é igual ao nome da variavel do objeto,
+            pode se deixa apenas um deles.
+        */
+
+        var nome = 'Jonas';//Sera referenciada pela sintaxe curta de objeto.
+        var idade = 25;
+
+        const usuario = {
+            nome,//sintaxe curta referenciando a variavel.
+            idade,
+            empresa: 'Google',
+        };
+        console.log(usuario);
+
+    </script>
+</body>
+</html>
