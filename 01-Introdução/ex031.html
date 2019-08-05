@@ -14,8 +14,8 @@
         //Exemplo sem uso do arrowfunction.
         const testArray = array.map(function(item){
             // 1-> Remove-se a função anonima ("function"(item))
-            // 2-> Adiciona apos a declaração de parametros a simbologia "=>" e o código necessario.
-            // 3-> Quando não possui um codigo extenso, se colaca o restante da codigo apos a seta.
+            // 2-> Adiciona apos a declaração de parametros a simbologia "=>" e o código necessario entre colchete "{}".
+            // 3-> Quando NÃO possui um codigo extenso, se colaca o restante da codigo após a seta SEM colchetes "{}".
             return item * 2;
         });
 
@@ -25,9 +25,8 @@
         console.log(newArray);
 
         //Usando arrowfunction, na criação de funções.
-        const teste = () =>{
-            return 'teste';
-        }
+        // declaracao nomeFunção = (Parametros) => {codigos necessario}
+        const teste = () =>'teste'
         console.log(teste());
 
         //Retornando um objeto com uma função usando arrowfunction.
