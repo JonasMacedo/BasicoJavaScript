@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EventListener.</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            border: 5px solid red;
+            background-color: black;
+            position: absolute;
+            left: 2px;
+            top: 150px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Conceito de EventListener.</h1>
+    <p>Abra a perspectiva de debug do brownser.</p>
+
+    <div id="div1">
+    </div>
+
+
+    <script>
+        /* AddEventListener.
+            - Consiste em adicionar um escutador de um determinado 
+            evento, a um objeto especificado.
+            - Melhor forma de trabalhar com eventos, pois não espalha 
+            codigo JS, por todo o documento html. Restringindo ele ao arquivo JS.
+        */
+
+        //Referenciando objeto.
+        var elementDiv = window.document.getElementById('div1');
+        
+        //Adicionando escutadores com addEventListener.
+        elementDiv.addEventListener('click',Alerta);
+        elementDiv.addEventListener('click',cor1);
+
+        function Alerta(){
+            window.alert("Teste do botão!");
+        }
+
+        function cor1(){
+            elementDiv.style.backgroundColor = 'blue';
+            elementDiv.style.borderColor = 'black';
+        }
+
+        //Adicionando escutador addEventListener, no corpo da pagina.
+        window.addEventListener('load',EfeitoIncial);
+        
+        function EfeitoIncial(){
+            // metodos estaram sempre ativos devido estarem linkados a body.
+            elementDiv.addEventListener('mouseover',efeitoPermanente1);
+            elementDiv.addEventListener('mouseout',efeitoPermanente2)
+        }
+
+        function efeitoPermanente1(){
+            elementDiv.style.backgroundColor = 'purple';
+            elementDiv.style.borderColor = 'yellow';
+            elementDiv.style.color = 'white';
+            elementDiv.innerText = 'Mouse dentro!';
+        }
+        
+        function efeitoPermanente2(){
+            elementDiv.style.backgroundColor = 'gray';
+            elementDiv.style.borderColor = 'red';
+            elementDiv.style.color = 'white';
+            elementDiv.innerText = 'Mouse Fora!';
+        }
+
+    </script>
+</body>
+</html>
