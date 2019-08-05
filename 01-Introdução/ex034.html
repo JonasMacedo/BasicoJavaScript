@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desestruturação.</title>
+</head>
+<body>
+    <h1>Conceitos de desestruturação em JS.</h1>
+
+    <script>
+        /* Desestruturação.
+            Consiste em desmembrar um objeto ou array, 
+            para facilitar o uso de suas informações.
+            - Basta passar os atributos e depois informar o objeto.
+            - Caso esteja dentro de outro array ou objeto precisa abrir objeto
+        */
+        const usuario = {
+            nome: 'Jonas',
+            idade: 25,
+            ocupacao: 'Desenvolvedor',
+            endereco:{
+                cidade: 'Cascavel',
+                estado: 'PR',
+            },
+        };
+        console.log("Objeto completo: ",usuario);
+
+        /*Desestruturando.
+            - Basta passar os atributos e depois informar o objeto.
+        */
+        const {nome, idade} = usuario;
+        console.log(nome);
+        console.log(idade);
+
+        /*Objetos dentro de objeto.
+            -Declare o objeto que o contem, depois a variavel desejada.
+        */
+        const{ocupacao, endereco : {cidade} } = usuario;
+        console.log(ocupacao);
+        console.log(cidade);
+
+        //Usando desestruturação em parametros de funções.
+        function mostraNome({nome,ocupacao}){
+            console.log("Função Desestruturada: ",nome,ocupacao);
+        }
+        mostraNome(usuario);
+
+        
+    </script>
+</body>
+</html>
