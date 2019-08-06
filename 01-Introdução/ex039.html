@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Função Anonima</title>
+    <style>
+        #div1{
+            width: 110px;
+            height: 100px;
+            border: 3px solid red;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Conceito de Funções Anonimas.</h1>
+    <p>Abra a perspectiva de debug do brownser.</p>
+    <div id="div1">
+    </div>
+    <script>
+        /* Funções Anonimas.
+            - Permite atribuir funções a variaveis.
+            - Podem ser usadas em qualquer tipo de estrutra.
+        */
+
+        // Criando uma função anonima.
+        var soma = function(a,b){return a+b};
+        console.log("Exemplo de função anonima: ",soma(7,3));
+
+        //Criando uma função anonima com parametros. 
+        var elementDiv = window.document.getElementById('div1');
+        elementDiv.addEventListener('mouseover',function(event){
+            TrocaCor(elementDiv,'blue');
+        });
+        elementDiv.addEventListener('mouseout',function(event){
+            TrocaCor(elementDiv,'black');
+        });
+
+        function TrocaCor(obj,cor){
+            obj.style.backgroundColor=cor;
+        }
+
+    </script>
+</body>
+</html>
