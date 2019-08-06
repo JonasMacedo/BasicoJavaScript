@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rest e Spread</title>
+</head>
+<body>
+    <h1>Conceitos de Rest e Spread.</h1>
+    <p>Abra a perspectiva de debug do brownser.</p>
+
+    <script>
+        /*Rest e Spread.
+            Conhecido por utiliar o operador de 3 pontos "...rest" ou "...spread".
+            Este operador tem uma sintaxe similar a da desestrutuação, 
+            porem armazena seu conteudo em um array. 
+            - REST:
+                -> Sempre retorna o restante de alguma informação.
+            - SPREAD:
+                -> Tem por finalidade propagar a informção contida, 
+                em um objeto ou array, para outra estrutura de dados.
+        */
+
+        const usuario ={
+            nome: 'Jonas',
+            idade: 25,
+            empresa: 'Google'
+        };
+
+        //Usando o REST.
+        const {nome, ...resto} = usuario;
+        console.log("Nome do objeto: ",nome);
+
+        //Todo o restante dos atributos do USUARIO estara contido na variavel RESTO.
+        console.log("Restante do objeto: ",resto)
+
+        //Desestruturação com rest.
+        var vetor = [1,3,6,2,7];
+        var [a,b, ...c] = vetor;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        //Parametros de funções com Rest, e Arrow Function.
+        function soma (...rest){ return rest.reduce((total,next)=> total+next)};
+        console.log(soma(1,5,8,12));
+
+        //Usando o SPREAD.
+        var vet01 = [1,2,3];
+        var vet02 = [4,5,6];
+
+        var vet03 = [...vet01, ...vet02]; //O spread copiará, o conteudo dos vetores, no novo vetor.
+        console.log("Array com spread: ",vet03);
+
+        //Criando objetos com spread.
+        const pessoa = {
+            nome: 'Jão',
+            idade: 21,
+            nacionalidade: 'Mexico',
+        };
+
+        const pessoa02 = {nome:'Zé', idade: 32, ...pessoa};//Objetos e constantes não podem ter atributos iguais.
+        console.log(pessoa02);
+
+    </script>
+</body>
+</html>

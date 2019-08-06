@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evente Listener02.</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            border: 5px solid red;
+            background-color: gray;
+            position: absolute;
+            left: 2px;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de uso função anonima.</h1>
+
+    <div id="div1"></div>
+
+    <script>
+
+        var px=0;
+        var py=0;
+
+        document.addEventListener('keydown',movimentar);
+
+        function movimentar(){
+            var obj = document.getElementById('div1');
+            var tecla = event.keyCode; // retornando o codigo da tecla precionada.
+            //37-Esquerda - 38-Cima - 39-Direita - 40-Baixo;
+
+            if(tecla == 37 ){
+                px-=35;
+                obj.style.left = px+"px";
+            }else if(tecla ==38){
+                py -= 35;
+                obj.style.top = py +"px";
+            }else if(tecla ==39){
+                px += 35;
+                obj.style.left = px +"px";
+            }else if(tecla ==40){
+                py += 35;
+                obj.style.top = py +"px";
+            }
+        }
+
+    </script>
+</body>
+</html>
