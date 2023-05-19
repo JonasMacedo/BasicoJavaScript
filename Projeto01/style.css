@@ -69,3 +69,26 @@ body{
     grid-column: 1/4;
 }
 
+.describ h2::before{
+    content: " ";
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+    background: #fb5;
+}
+
+.describ h2{
+    font-family: 'Playfair Display SC', serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1rem;
+    color: #e54;
+}
+
+.describ p{
+    font-family: Helvetica, Arial;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
