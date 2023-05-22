@@ -92,3 +92,8 @@ body{
     line-height: 1.2;
     margin-bottom: 1rem;
 }
+
+.sectionAnimais ul , li , img{
+    height: 370px;
+    overflow-y: scroll;
+}
