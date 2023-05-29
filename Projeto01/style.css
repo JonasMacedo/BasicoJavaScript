@@ -93,7 +93,7 @@ body{
     margin-bottom: 1rem;
 }
 
-.sectionAnimais ul , li , img{
+.sectionAnimais ul{
     height: 370px;
     overflow-y: scroll;
 }
