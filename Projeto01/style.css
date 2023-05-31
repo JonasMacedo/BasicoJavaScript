@@ -60,7 +60,8 @@ body{
 
 }
 
-.sectionAnimais > h1{
+/* .sectionAnimais > h1{ */
+.titulo{
     font-family: 'Playfair Display SC', serif;
     font-size: 5rem;
     line-height: 1;
@@ -116,4 +117,19 @@ body{
 .describ section{
     margin-bottom: 3rem;
 }
+
+.faq{
+    grid-column: 2/4;
+}
+
+.faqLista dt{
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: #e54;
+}
+
+
 
