@@ -109,3 +109,8 @@ body{
     border-right: 4px solid #faf6ed;
 }
 
+.describ{
+    grid-column: 3;
+}
+
+
