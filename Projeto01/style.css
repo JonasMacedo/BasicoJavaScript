@@ -140,3 +140,8 @@ body{
     margin-right: 10px;
 }
 
+.faqLista dd{
+    font-family: Helvetica, Arial;
+    margin-left: 30px;
+    margin-bottom: .5rem;
+}
