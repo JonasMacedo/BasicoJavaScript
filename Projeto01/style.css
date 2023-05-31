@@ -98,3 +98,14 @@ body{
     overflow-y: scroll;
     grid-column: 2;
 }
+
+.animaisLista::-webkit-scrollbar{
+    width: 18px;
+}
+
+.animaisLista::-webkit-scrollbar-thumb {
+    background: #fb5;
+    border-left: 4px solid #faf6ed;
+    border-right: 4px solid #faf6ed;
+}
+
