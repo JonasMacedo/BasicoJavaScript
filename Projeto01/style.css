@@ -96,4 +96,5 @@ body{
 .sectionAnimais ul{
     height: 370px;
     overflow-y: scroll;
+    grid-column: 2;
 }
