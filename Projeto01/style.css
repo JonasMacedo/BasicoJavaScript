@@ -147,12 +147,11 @@ body{
 }
 
 .contato{
-    grid-column: 2/4;
-    max-width: 270px;
-}
-
-.dados{
-    grid-column: 3;
+    grid-column: 2/4; 
+    
+    display: grid;
+    grid-template-columns: 300px 300px;
+    gap: 20px;
 }
 
 .dados li{
@@ -167,4 +166,18 @@ body{
     width: 20px;
     height: 10px;
     margin-right: 10px;
+}
+
+
+.copy{
+    grid-column: 2/4;
+    margin-top: 20px;
+    margin-bottom: 2rem;
+    background: #fb5;
+}
+
+.copy{
+    padding: 20px;
+    font-family: monospace;
+    font-weight: bold;
 }
