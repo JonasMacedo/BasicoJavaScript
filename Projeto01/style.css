@@ -113,4 +113,7 @@ body{
     grid-column: 3;
 }
 
+.describ section{
+    margin-bottom: 3rem;
+}
 
