@@ -145,3 +145,26 @@ body{
     margin-left: 30px;
     margin-bottom: .5rem;
 }
+
+.contato{
+    grid-column: 2/4;
+    max-width: 270px;
+}
+
+.dados{
+    grid-column: 3;
+}
+
+.dados li{
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial;
+}
+
+.dados li::before {
+    content: " ";
+    background: #fb5;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+}
