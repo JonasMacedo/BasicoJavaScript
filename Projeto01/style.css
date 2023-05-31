@@ -131,5 +131,12 @@ body{
     color: #e54;
 }
 
-
+.faqLista dt::before{
+    content: " ";
+    background: #fb5;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+}
 
