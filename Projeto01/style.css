@@ -206,7 +206,7 @@ body{
     }
     
     .dados{
-        grid-column: 2;
+        grid-column: 1;
     }
 
     .titulo{
