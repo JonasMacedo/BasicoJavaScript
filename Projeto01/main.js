@@ -37,4 +37,38 @@ console.log(h2Animais[0]);
 var pS = document.querySelectorAll('p')
 console.log(pS[--pS.length]);
 
+console.log(
+"///-------------------///------------------- FOREACH --------------------///-------------------///-------------------"
+)
+
+//Constantemente vamos selecionar uma lista de itens do dom. A melhor forma para interagirmos com os mesmos é utilizando o método forEach.
+
+const imagensFor = document.querySelectorAll('img')
+
+imagensFor.forEach(function(item,index, array){
+    
+    /*O primeiro parâmetro é o callback, ou seja, oque sera retornado.
+    a função que será ativada a cada item. 
+    Esse função pode receber três parâmetros: valorAtual, index e array;*/
+    
+    console.log(item) // item atual no loop.
+    console.log(index) // numero do index.
+   
+});
+
+
+//FOREACH E ARRAY
+// forEach é um método de Array, alguns objetos array-like possuem este método. 
+// Caso não possua, o ideal é transformá-los em uma array.
+
+var titulos = document.getElementsByClassName('titulo')
+console.log(titulos)
+
+const arrayTitulos = Array.from(titulos) // Se comentar dara erro dizendo que nao é um array.
+arrayTitulos.forEach(function(item){
+    console.log(item);
+})
+
+
+
 
