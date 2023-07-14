@@ -69,6 +69,12 @@ arrayTitulos.forEach(function(item){
     console.log(item);
 })
 
+//Retornando cada paragrafo do site
+var tagsP = document.querySelectorAll('p')
+tagsP.forEach((tag)=>{
+    console.log(tag)
+})
 
+//Retornando cada conteudo dos paragrafos
 
 
