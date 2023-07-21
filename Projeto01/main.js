@@ -53,7 +53,6 @@ console.log(
     - Caso não possua, o ideal é transforma-los em uma array.
 */ 
 
-
 const imagensFor = document.querySelectorAll('img')
 imagensFor.forEach(function(item,index, array){
     
@@ -98,9 +97,21 @@ itensMenu.forEach((item)=>{
     console.log(item)
 })
 
-
 // deixando a classe 'ATIVA' apenas no primeiro item do menu.
+itensMenu.forEach((itemRemove,ind)=>{
+    (ind == 0 )? itemRemove.classList.add('ATIVO') : itemRemove.classList.remove('ativo');
+})
+
+// ArrowFunction mais simplificada.
 itensMenu.forEach((itemRemove,ind)=>(ind == 0 )? itemRemove.classList.add('ATIVO') : itemRemove.classList.remove('ativo'))
 
+// verificando se as imagens possui o atributo "alt"
+imagensFor.forEach((img)=>{
+    var attribut = img.hasAttribute('alt')
+    console.log(img, attribut)
+})
 
+//Alterando o link de "contato" do menu.
+var attribut = document.querySelector('a[href^="#contato"]')
+attribut.setAttribute('href','https://google.com')
 
