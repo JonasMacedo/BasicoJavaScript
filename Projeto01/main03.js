@@ -28,3 +28,12 @@ animaisList.addEventListener('click',callbackAnimais)
 function callbackAnimais(event){
     console.log(event.target)
 }
+
+function verificaLetra(event){
+    
+    if(event.key == 'A'){
+        document.body.classList.toggle(window.alert('Apertou A'));
+    }
+}
+
+window.addEventListener('keydown', verificaLetra)
