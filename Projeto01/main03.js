@@ -9,6 +9,7 @@ console.log(
 
 const img = document.querySelector('img');
 img.addEventListener('click',()=>{
+    // O primeiro parâmetro do callback é referente ao evento que ocorreu.
     console.log('clicou na image!!')
 })
 
@@ -37,3 +38,15 @@ function verificaLetra(event){
 }
 
 window.addEventListener('keydown', verificaLetra)
+
+// ForEach e Eventos
+// Para adicionar o addEventListener em varios elementos é necessario um loop, porq o metodo é por elemento.
+
+const allImags = document.querySelectorAll('.animaisLista');
+
+function imagSrc(event) {
+    console.log('Evento em loop, clicou na imagem:',event.target)
+}
+allImags.forEach((imag) => {
+    imag.addEventListener('click',imagSrc);
+});
