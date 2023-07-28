@@ -3,8 +3,8 @@ console.log(
 )
 
 // TRASVERSING
-
 // Consiste em navegar pelo DOM, utilizando suas propriedades e métodos.
+
 const lista = document.querySelector('.animaisLista')
 
 // Verificando o elemento pai.
@@ -25,3 +25,13 @@ console.log(lista.children);
 // Retornando os elementos filhos do tipo NodeList.
 console.log(lista.childNodes);
 
+// Movendo elementos na DOM com Node. 
+
+const contat = document.querySelector('.contato');
+const titulo = contat.querySelector('.titulo');
+
+// Move o elemento/tag para o final da possição dentro da arvore de elementos.
+// lista.appendChild(titulo)
+
+// Move o elemento/tag para o final da possição dentro da arvore de elementos.
+contat.insertBefore(lista, titulo); // Move apenas elementos filhos.
