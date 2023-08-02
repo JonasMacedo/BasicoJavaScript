@@ -222,3 +222,12 @@ body{
         margin-bottom: 0px;
     }
 }
+
+.js-tabcontent section{
+    display: none;
+}
+
+.js-tabcontent section.ativa{
+    display: block !important;
+}
+
