@@ -8,28 +8,31 @@
 const tabMenu = document.querySelectorAll('.js-tabmenu li')
 const tabContent = document.querySelectorAll('.js-tabcontent section')
 
-// para deixar a primeiro item como ativo padrao.
-tabContent[0].classList.add('ativa')
-
-function activeTab(index){
+// Verificacao para caso o item existam na pagina.
+if (tabMenu.length && tabContent.length) {
     
-    // Recebe index como parâmetro para ativar a tab. 
+    // para deixar a primeiro item como ativo padrao.
+    tabContent[0].classList.add('ativa')
     
-    tabContent.forEach((section)=>{
-        //Sempre que ativar, remove a classe ativo de todos os outros elementos.
-        section.classList.remove('ativa')
+    function activeTab(index){
+        
+        // Recebe index como parâmetro para ativar a tab. 
+        
+        tabContent.forEach((section)=>{
+            //Sempre que ativar, remove a classe ativo de todos os outros elementos.
+            section.classList.remove('ativa')
+        })
+    
+        tabContent[index].classList.add('ativa');
+    }
+    
+    tabMenu.forEach((item, index)=>{
+        /* 
+            Passar antes a função anônima no callback, para poder passar o index 
+            como argumento da funcao activeTab.
+        */
+        item.addEventListener('click', ()=>{
+            activeTab(index)
+        })
     })
-
-    tabContent[index].classList.add('ativa');
 }
-
-
-tabMenu.forEach((item, index)=>{
-    /* 
-        Passar antes a função anônima no callback, para poder passar o index 
-        como argumento da funcao activeTab.
-    */
-    item.addEventListener('click', ()=>{
-        activeTab(index)
-    })
-})
