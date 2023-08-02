@@ -110,6 +110,10 @@ body{
     border-right: 4px solid #faf6ed;
 }
 
+.animaisLista li{
+    cursor: pointer;
+}
+
 .describ{
     grid-column: 3;
 }
