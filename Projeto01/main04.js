@@ -51,9 +51,6 @@ novoH1.classList.add('titulo')
 //Adicionando o elemento na DOM.
 const mapa = document.querySelector('.mapa')
 
-
-
-
 //Clonando Elementos da DOM.
 const tituloPrincipal = document.querySelector('h1')
 
