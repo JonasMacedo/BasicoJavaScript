@@ -13,6 +13,14 @@ if (tabMenu.length && tabContent.length) {
     
     // para deixar a primeiro item como ativo padrao.
     tabContent[0].classList.add('ativa')
+        
+    tabMenu.forEach((item, index)=>{
+        /* 
+        Passar antes a função anônima no callback, para poder passar o index 
+        como argumento da funcao activeTab.
+        */
+       item.addEventListener('click', ()=>{activeTab(index)})
+    })
     
     function activeTab(index){
         
@@ -25,14 +33,4 @@ if (tabMenu.length && tabContent.length) {
     
         tabContent[index].classList.add('ativa');
     }
-    
-    tabMenu.forEach((item, index)=>{
-        /* 
-            Passar antes a função anônima no callback, para poder passar o index 
-            como argumento da funcao activeTab.
-        */
-        item.addEventListener('click', ()=>{
-            activeTab(index)
-        })
-    })
 }
