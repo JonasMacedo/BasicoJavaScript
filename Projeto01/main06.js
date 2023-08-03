@@ -6,3 +6,17 @@
     - arcodeon/sanfona dai o nome Accordion.
 */
 
+const accordionList = document.querySelectorAll('.js-accordion dt')
+
+accordionList.forEach((item)=>{
+    item.addEventListener('click', activeAccordion)
+})
+
+function activeAccordion(){
+    console.log('Elemento alvo: ', this)
+    console.log('Proximo elemento: ', this.nextElementSibling)
+    
+    this.classList.toggle('ativo');
+    this.nextElementSibling.classList.toggle('ativo');
+
+}
