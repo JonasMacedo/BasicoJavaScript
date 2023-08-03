@@ -8,6 +8,9 @@
 
 const accordionList = document.querySelectorAll('.js-accordion dt')
 
+accordionList[0].classList.add('ativo')
+accordionList[0].nextElementSibling.classList.add('ativo');
+
 accordionList.forEach((item)=>{
     item.addEventListener('click', activeAccordion)
 })
