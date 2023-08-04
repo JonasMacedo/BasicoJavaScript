@@ -32,3 +32,33 @@ function initAccordion(){
 }
 
 initAccordion();
+
+// Corrigindo link externo.
+const contat = document.querySelector('a[href^="https"')
+contat.setAttribute('href','#contato');
+
+
+const linksMenu = document.querySelectorAll('.js-menu a[href^="#"]');
+
+function scrollToSection(item){
+    item.preventDefault();   
+    var href = item.currentTarget.getAttribute('href')
+    var section = document.querySelector(href)
+    let topo = section.offsetTop
+
+    section.scrollIntoView()
+
+    /* Metodo de scrool suave, alterantivo.
+    
+    window.scrollTo({
+        top: topo,
+        behavior: "smooth"
+    })
+    
+    */
+    
+}
+
+linksMenu.forEach((link)=>{ 
+    link.addEventListener('click', scrollToSection)
+});
