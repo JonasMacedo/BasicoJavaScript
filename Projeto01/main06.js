@@ -37,28 +37,35 @@ initAccordion();
 const contat = document.querySelector('a[href^="https"')
 contat.setAttribute('href','#contato');
 
+function initScrollSuave(){
 
-const linksMenu = document.querySelectorAll('.js-menu a[href^="#"]');
-
-function scrollToSection(item){
-    item.preventDefault();   
-    var href = item.currentTarget.getAttribute('href')
-    var section = document.querySelector(href)
-    let topo = section.offsetTop
-
-    section.scrollIntoView()
-
-    /* Metodo de scrool suave, alterantivo.
+    const linksMenu = document.querySelectorAll('.js-menu a[href^="#"]');
     
-    window.scrollTo({
-        top: topo,
-        behavior: "smooth"
-    })
+    function scrollToSection(item){
+        item.preventDefault();   
+        var href = item.currentTarget.getAttribute('href')
+        var section = document.querySelector(href)
+        
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
     
-    */
+        /* Metodo de scrool suave, alterantivo.
+        let topo = section.offsetTop
+        
+        window.scrollTo({
+            top: topo,
+            behavior: "smooth"
+        })
+        
+        */
+       
+    }
     
+    linksMenu.forEach((link)=>{ 
+        link.addEventListener('click', scrollToSection)
+    });
 }
 
-linksMenu.forEach((link)=>{ 
-    link.addEventListener('click', scrollToSection)
-});
+initScrollSuave()
