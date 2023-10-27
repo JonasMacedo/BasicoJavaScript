@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1>Abra o console do Navegador!</h1>
+
+    <script>
+        
+        /* Objetos.
+            - para cria-los basta definirmos uma variável e iniciar a definição do seu valor com chaves {}
+        */
+       
+       const carro = {
+            marca: '',
+            preco: 0,
+        }
+        console.log(carro)
+        
+        const honda = carro; // Ira sobreescrever o objeto carro
+        honda.marca = 'Honda'
+        honda.preco = 4000;
+        console.log(honda)
+        
+        const fiat = carro; // Ira sobreescrever o objeto carro
+        fiat.marca = 'Fiat'
+        fiat.preco = 3000.
+        console.log(fiat)
+        console.log(carro)
+        
+        
+        /* Funcao Cconstrutora(Constructor Functions).
+            - funcao responsavel por criar novos objetos, sempre que chamados.
+            - evitando que o obejto seja reescrito.
+        */
+        
+        function AutoMovel(marcaParametro,precoParametro){
+            this.marca = marcaParametro,
+            this.preco = precoParametro;
+        }
+        console.log(AutoMovel)
+        
+        const ford = new AutoMovel; // Ira criar um novo objeto.
+        // O NEW é uma palavra chave, responsável por criar um novo objeto, baseado na função que passarmos a frente dela.
+        this.marca = 'Ford'
+        this.preco = 77,301;
+                
+        const ferrari = new AutoMovel; // Ira criar um novo objeto.
+        this.marca = 'Ferrari'
+        this.preco = 887,501.
+        
+        ferrari.ano = 2017; // Criando nova propriedade.
+        
+        ferrari.andar = function(){ // Criando nova funcao.
+            
+            // Funcoes de obejtos devem ser criadas em sua craiacao.
+            // Assim todos os objetos herdam, indiferente ao momento de sua criacao.
+            return "Andou 23mil KMs"
+        };
+                
+        const buggati = new AutoMovel('Buggati', 789.599);
+
+        function MotoCicleta(marcaParam, precoParam){
+            this.marca = marcaParam,
+            this.preco = marcaParam
+        }
+        console.log(MotoCicleta)
+        const biz = new MotoCicleta('Honda Biz',7.500);
+
+    </script>
+
+</body>
+
+
+</html>
