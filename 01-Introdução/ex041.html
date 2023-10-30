@@ -9,6 +9,12 @@
 <body>
     
     <h1>Abra o console do Navegador!</h1>
+    
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
 
     <script>
         
@@ -66,11 +72,49 @@
         const buggati = new AutoMovel('Buggati', 789.599);
 
         function MotoCicleta(marcaParam, precoParam){
-            this.marca = marcaParam,
-            this.preco = marcaParam
+            let taxa = 1.2; // Variavel interna
+            let precoFinal = precoParam * taxa;
+            this.marca = marcaParam;
+            this.preco = precoFinal;
         }
         console.log(MotoCicleta)
         const biz = new MotoCicleta('Honda Biz',7.500);
+
+        //Objeto puro.
+        const Dom = {
+            
+            //Baixa performance, pouco reaproveitamento de codigo.
+            
+            seletor: 'li',//Irá influenciar em todos os objetos criados.
+            
+            elemento(){
+                //Ira buscar o primeiro elemento do tipo LI.
+                return ElementoLi = document.querySelector(this.seletor)
+                //Apos o retorno podera ser usado todos os metodos do elemento LI.
+            },
+            
+            ativar(){
+                this.elemento().classList.add('ATIVO');
+            }
+        } 
+        
+        // Objeto com Construtor.
+        function DomElement(seletorParam){
+            
+            //Alta performance, reaproveitamento de codigo.
+            
+            this.element = function(){
+                return document.querySelector(seletorParam)
+                //Um objeto criado com um Constructor, não irá influenciar em outro objeto criado com a mesma Constructor.
+            }
+
+            this.ativo = function(){
+                this.element().classList.add('ativado')
+            }
+
+        }
+
+        const ul = new DomElement('ul')
 
     </script>
 
