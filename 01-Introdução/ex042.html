@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Construtores com ArrowFunction e Arrays</title>
+    </head>
+
+    <body>
+
+        <h1>Abra o console do Navegador!</h1>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <script>
+        
+           function Individuo(name, age) {
+                this.nome = name;
+                this.idade = age;
+                
+                this.caminhar = function(){
+                    return console.log(`O ${this.nome} caminhou`)                
+                }
+                
+            }
+            
+            const Thiago = new Individuo('Thiago',63)
+            const Maikon = new Individuo('Maicon',87)
+            const Kaio = new Individuo('Kaio',17)
+            
+            
+            function Dom(seletor) {
+                
+                const element = document.querySelectorAll(seletor);
+                console.log(element)
+
+                this.elementList = element;
+                
+                this.ativarClasse = function (classe) {
+                    element.forEach(domElement => {
+                        domElement.classList.add(classe);
+                    });
+                    
+                }
+                
+                this.desativaClasse = function (classe){
+                    element.forEach( elements =>{ 
+                        elements.classList.remove(classe);
+                    });
+                }
+
+            }
+            
+            const item = new Dom('li')
+            
+        </script>
+
+    </body>
+
+</html>
