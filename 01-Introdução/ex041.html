@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Objeto Vs Construtores</title>
 </head>
 
 <body>
@@ -40,9 +40,9 @@
         console.log(carro)
         
         
-        /* Funcao Cconstrutora(Constructor Functions).
+        /* Funcao Construtora(Constructor Functions).
             - funcao responsavel por criar novos objetos, sempre que chamados.
-            - evitando que o obejto seja reescrito.
+            - evitando que o objeto seja reescrito.
         */
         
         function AutoMovel(marcaParametro,precoParametro){
@@ -52,7 +52,7 @@
         console.log(AutoMovel)
         
         const ford = new AutoMovel; // Ira criar um novo objeto.
-        // O NEW é uma palavra chave, responsável por criar um novo objeto, baseado na função que passarmos a frente dela.
+        // O NEW é uma palavra chave, responsável por criar um novo objeto, baseado na função que passarmos a apos o "NEW".
         this.marca = 'Ford'
         this.preco = 77,301;
                 
@@ -64,9 +64,9 @@
         
         ferrari.andar = function(){ // Criando nova funcao.
             
-            // Funcoes de obejtos devem ser criadas em sua craiacao.
+            // Funcoes de objetos devem ser definidas, em sua craiacao.
             // Assim todos os objetos herdam, indiferente ao momento de sua criacao.
-            return "Andou 23mil KMs"
+            return "Andou 23 mil KMs"
         };
                 
         const buggati = new AutoMovel('Buggati', 789.599);
