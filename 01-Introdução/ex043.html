@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prototype</title>
+    </head>
+
+    <body>
+        
+        <!-- Prototipo é uma propriedade das FUNCOES e nao do objeto. -->
+        
+        <h1>Abra o console do Navegador!!</h1>
+
+        <script>
+            
+            function Pessoa(nome,idade){
+                this.nome = nome;
+                this.idade = idade;
+            }
+                
+
+            const joe = new Pessoa('Joe',23); //Criando um objeto pessoa, o OBJETO nao possui prototype
+            
+            console.log(Pessoa.prototype)
+            console.log(joe.prototype)
+            
+        </script>
+
+    </body>
+
+</html>
