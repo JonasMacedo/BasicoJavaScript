@@ -15,17 +15,35 @@
 
         <script>
             
+            // Todo o objeto herda o acesso das funcoes do prototype, que são muito uteis para retornoar dados ou funcoes.    
+
             function Pessoa(nome,idade){
                 this.nome = nome;
                 this.idade = idade;
             }
                 
-
-            const joe = new Pessoa('Joe',23); //Criando um objeto pessoa, o OBJETO nao possui prototype
+            //Criando um objeto pessoa, o OBJETO nao possui prototype.
+            const joe = new Pessoa('Joe',23); 
             
             console.log(Pessoa.prototype)
-            console.log(joe.prototype)
+            console.log(joe.prototype) // retorna indefnido, pois objetos nao possuem prototype.
             
+            // É possível adicionar novas propriedades e métodos para o objeto com prototype.
+            Pessoa.prototype.andar = function(){
+                
+                // Todas as funcoes criadas com o prototype tem acesso as variaveis do construtor.    
+                return 'A Pessoa andou '+this.nome;
+
+                // O JS sempre irá procurar as funcoes dentro do objeto e DEPOIS no prototipo
+
+            }
+            
+            Pessoa.prototype.mergulhar = function (){
+                
+                // Metodos criados com o prototype existem apenas quando chamados.
+                return 'A Pessoa mergulhou '+this.nome;
+            }
+
         </script>
 
     </body>
