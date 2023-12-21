@@ -9,6 +9,8 @@
 
     <body>
 
+        <h1>Abra o console do navegador!</h1>
+
         <script>
             
             /* Native:
@@ -27,8 +29,26 @@
                 - Pode ser qualquer objeto criado ou importado de algum biblioteca externa.
             */
 
-            
+            const comida = 'Pizza';
+            /* String:
+                - A construtora de string possui as propriedades do prototype String.
+            */
+            const liquido = new String(' Água');
 
+            console.log(comida) // retorna uma string.
+            console.log(liquido) // retorna um objeto.
+            
+            // Ambos herdam metodos do prototype
+            // comida.toLowerCase();
+            // liquido.toLowerCase();
+            
+            const frase = comida.concat(liquido) // metodo do prototype.
+
+            const fruta = 'Banana';
+            const listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
+
+            // funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING, a procura é CASE SENSITVE.
+            console.log(listaFrutas.includes(fruta))
 
         </script>
 
