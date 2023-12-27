@@ -44,7 +44,7 @@
             const frase = comida.concat(liquido) // metodo do prototype.
 
             const fruta = 'Banana';
-            const listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
+            let listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
 
             /* INCLUDES: 
                 - funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING
@@ -57,6 +57,22 @@
                 console.log(item.includes('Laranja'))
             })
             
+            /* REPLACE:
+                - funcao REPLACE do prototype, substitui uma SubString por uma nova STRING.
+                - a funcao recebe dois parametros, uma sendo a substring(original) pela nova string.
+            */
+
+           // listaFrutas = listaFrutas[2].replace('Banana', 'Ameixa');
+           let newFruta= fruta.replace('Banana', 'Ameixa');
+           console.log(newFruta)
+            
+           let x;
+           listaFrutas.forEach(element => {
+                if(element.includes('Banana')){
+                    x = element.replace('Banana','Abacate')
+                }                
+            });
+            console.log(x)
 
         </script>
 
