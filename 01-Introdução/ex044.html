@@ -65,14 +65,39 @@
            // listaFrutas = listaFrutas[2].replace('Banana', 'Ameixa');
            let newFruta= fruta.replace('Banana', 'Ameixa');
            console.log(newFruta)
+        
+           const motocicletas = [
+                {
+                    descricao: 'Lambreta',
+                    valor: 'R$ 2200',
+                },
+                {
+                    descricao: 'Ducati',
+                    valor: 'R$ 17980',
+                },
+                {
+                    descricao: 'Kawasaki',
+                    valor: 'R$ 12000 ',
+                },
+                {
+                    descricao: 'Hornet',
+                    valor: 'R$ 13700',
+                },
+                {
+                    descricao: 'CBR 300R',
+                    valor: 'R$ 5650',
+                },
+            ]
+
+            let valorTot=0;
+            motocicletas.forEach(element => {
+                let numbClean = element.valor.replace('R$',' ');
+                valorTot += Number.parseInt(numbClean);
+                console.log(numbClean)
+                            
+            });    
+            console.log(valorTot)
             
-           let x;
-           listaFrutas.forEach(element => {
-                if(element.includes('Banana')){
-                    x = element.replace('Banana','Abacate')
-                }                
-            });
-            console.log(x)
 
         </script>
 
