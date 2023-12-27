@@ -15,13 +15,12 @@
             
             /* Native:
                 - Objetos nativos são definidos pela linguagem.
-            */
+            */ 
            
             /* Host:
                 - Objetos de Host são implementandos pelo ambiente.
-                -Exemplo o Browser que possui o DOM, como DomList, HTMLCollection e 
-                outros.
-                -Exemplo o Node.js os objetos de host são diferentes, já que o ambiente ñ é o browser.
+                - Exemplo o Browser que possui o DOM, como DomList, HTMLCollection e outros.
+                - Exemplo o Node.js os objetos de host são diferentes, já que o ambiente ñ é o browser.
             */
 
             /* User:
@@ -47,8 +46,17 @@
             const fruta = 'Banana';
             const listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
 
-            // funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING, a procura é CASE SENSITVE.
+            /* INCLUDES: 
+                - funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING
+                - esta procura é CASE SENSITVE.
+                - por padrao ela retorna um boleaan sendo true ou false.
+            */
             console.log(listaFrutas.includes(fruta))
+
+            listaFrutas.forEach(item =>{
+                console.log(item.includes('Laranja'))
+            })
+            
 
         </script>
 
