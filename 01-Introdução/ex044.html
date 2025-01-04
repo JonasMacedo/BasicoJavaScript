@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tipos de Objetos</title>
+        <title>Tipos de Objetos e Metodos Herdados</title>
     </head>
 
     <body>
@@ -15,13 +15,12 @@
             
             /* Native:
                 - Objetos nativos são definidos pela linguagem.
-            */
+            */ 
            
             /* Host:
                 - Objetos de Host são implementandos pelo ambiente.
-                -Exemplo o Browser que possui o DOM, como DomList, HTMLCollection e 
-                outros.
-                -Exemplo o Node.js os objetos de host são diferentes, já que o ambiente ñ é o browser.
+                - Exemplo o Browser que possui o DOM, como DomList, HTMLCollection e outros.
+                - Exemplo o Node.js os objetos de host são diferentes, já que o ambiente ñ é o browser.
             */
 
             /* User:
@@ -45,11 +44,108 @@
             const frase = comida.concat(liquido) // metodo do prototype.
 
             const fruta = 'Banana';
-            const listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
+            let listaFrutas = ['Melancia', 'Laranja', 'Banana','Pessego']
 
-            // funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING, a procura é CASE SENSITVE.
+            /* INCLUDES: 
+                - funcao INCLUDES do prototype, busca dentro de uma STRING outra STRING
+                - esta procura é CASE SENSITVE.
+                - por padrao ela retorna um boleaan sendo true ou false.
+            */
             console.log(listaFrutas.includes(fruta))
+
+            listaFrutas.forEach(item =>{
+                console.log(item.includes('Laranja'))
+            })
             
+            /* REPLACE:
+                - funcao REPLACE do prototype, substitui uma SubString por uma nova STRING.
+                - a funcao recebe dois parametros, uma sendo a substring(original) pela nova string.
+            */
+
+           let newFruta= fruta.replace('Banana', 'Ameixa');
+           console.log(newFruta)
+        
+           const motocicletas = [
+                {
+                    descricao: 'Lambreta',
+                    valor: 'R$ 2200',
+                },
+                {
+                    descricao: 'Ducati',
+                    valor: 'R$ 17980',
+                },
+                {
+                    descricao: 'Kawasaki',
+                    valor: 'R$ 12000 ',
+                },
+                {
+                    descricao: 'Hornet',
+                    valor: 'R$ 13700',
+                },
+                {
+                    descricao: 'CBR 300R',
+                    valor: 'R$ 5650',
+                },
+            ]
+
+            let valorTot=0;
+            motocicletas.forEach(element => {
+                
+                // substituindo a string com REPLACE.
+                let numbClean = element.valor.replace('R$',' ');
+                
+                // convertando a string em inteiro
+                valorTot += Number.parseInt(numbClean);
+                console.log(numbClean)
+                            
+            });    
+            console.log(valorTot)
+        
+            /* SPLIT:
+                - divide a string de acordo com o padrão passado e retorna uma array.
+            */
+
+            // string desordenada 
+           const listaItens = 'Camisas Bonés Calças Bermudas Vestidos Saias';
+           console.log('Typeof listaItens retorna uma string: ',listaItens)
+           
+            //convertendo para Array e ordenando com SPLIT.
+            const arrayItens = listaItens.split(' ');
+            console.log('Convertido em array: ',arrayItens)
+            
+            // substituindo a div por uma section com SPLIT.
+            const htmlText = '<div>O melhor item</div><div>A melhor lista</div>';
+            console.log(htmlText)
+            
+            //convertendo para Array e ordenando com SPLIT.
+            const htmlArray = htmlText.split('div');
+            console.log(htmlArray)
+            const htmlNovo = htmlArray.join('section');
+            console.log(htmlNovo)
+            
+            let html = `<ul> 
+                        <li><span>Sobre</span></li>
+                        <li><span>Produtos</span></li>
+                        <li><span>Contato</span></li>
+                    </ul>`;
+            console.log(html)
+        
+            html = html.split('span').join('a');
+            console.log(html)
+            
+            /* TRIM:
+            - remove espaço em branco do início ou final de uma string.
+            */
+           
+           const valor = '  R$ 23.00   ' 
+           console.log('valor com espaço:',valor)
+           console.log('valor sem espaço:',valor.trim())
+
+           let transacoes = ['TAxa do banco', 'TAXA DO PAO', 'taxa do mercado',
+           'deposito bacanario', 'Tarifa especial']
+
+                                
+
         </script>
 
     </body>

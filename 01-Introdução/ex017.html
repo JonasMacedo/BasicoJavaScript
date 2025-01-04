@@ -62,6 +62,19 @@
         for(i =0; i < mochila.length;i++){
             window.document.write(mochila[i],"<br>");    
         }
+        
+        
+        window.document.write("<br> Testando o metodo Split!<br> O Split é usado para dividir uma string em pequenos pedaços. Para isso, seu método retorna um array de strings, contendo as respectivas partes, definidas de acordo com a string passada como parâmetro, que na verdade funciona como o “agente” divisor da mesma.<br>");
+        let frase = 'Eu quero viver o amor de Deus!'
+        window.document.write('<br>', frase,"</br>")
+        
+        let myArray = frase.split(" ") //
+        window.document.write('Removendo os espaços em branco com Split: [', myArray,']')
+        
+        window.document.write("<br><br> Metodo Includes:<br>Determina se um array contém um determinado elemento, retornando TRUE ou FALSE");
+        window.document.write("<br> Para usá-lo, você precisa ter uma string e o valor que deseja verificar se está presente nessa string. Em seguida, você pode chamar o método includes() na string e passar o valor como argumento.<br>");
+        window.document.write("O arrey contem a palavra 'amor': ",myArray.includes("amor"))
+        
 
     </script>
 </body>
