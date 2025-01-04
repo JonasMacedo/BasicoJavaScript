@@ -11,5 +11,8 @@ function locNegada(orig) {
 }
 
 // Obtendo localizacao atual.
-navigator.geolocation.getCurrentPosition(localizationSucess, locNegada)
+navigator.geolocation.getCurrentPosition(localizationSucess, locNegada, {
+    enableHighAccuracy: true, // buscando com a maior precissao possivel.
+    timeout: 1500 // desativa apos os milesegundos.
+})
 
