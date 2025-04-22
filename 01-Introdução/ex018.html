@@ -180,16 +180,16 @@
         })
 
         const aulas = [
-            { id: 1, diaAula: 'seg', nome: 'PhotoShop', min: 7.50 , reforco:'sext'},
-            { id: 2, diaAula: 'ter', nome: 'MongoDB', min: 17.50 , reforco:'sext'},
-            { id: 3, diaAula: 'seg', nome: 'SQL', min: 12.33 , reforco:'sext'},
-            { id: 4, diaAula: 'quar', nome: 'HTML 1', min: 15 , reforco: null},
-            { id: 5, diaAula: 'ter', nome: 'HTML 2', min: 10 , reforco:'sext'},
-            { id: 6, diaAula: 'qui', nome: 'CSS 1', min: 22 , reforco: null},
-            { id: 7, diaAula: 'qui', nome: 'CSS 2', min: 25.51 , reforco:'sext'},
-            { id: 8, diaAula: 'qui', nome: 'JS 1', min: 27.02 , reforco:null},
-            { id: 9, diaAula: 'qui', nome: 'CSS 3', min: 20.01 , reforco:'sext'},
-            { id: 10, diaAula:'qui', nome: 'JS 2', min: 42.07 , reforco:'sext'},
+            { id: 1, diaAula: 'seg', nome: 'PhotoShop', min: 7.50, reforco: 'sext' },
+            { id: 2, diaAula: 'ter', nome: 'MongoDB', min: 17.50, reforco: 'sext' },
+            { id: 3, diaAula: 'seg', nome: 'SQL', min: 12.33, reforco: 'sext' },
+            { id: 4, diaAula: 'quar', nome: 'HTML 1', min: 15, reforco: null },
+            { id: 5, diaAula: 'ter', nome: 'HTML 2', min: 10, reforco: 'sext' },
+            { id: 6, diaAula: 'qui', nome: 'CSS 1', min: 22, reforco: null },
+            { id: 7, diaAula: 'qui', nome: 'CSS 2', min: 25.51, reforco: 'sext' },
+            { id: 8, diaAula: 'qui', nome: 'JS 1', min: 27.02, reforco: null },
+            { id: 9, diaAula: 'qui', nome: 'CSS 3', min: 20.01, reforco: 'sext' },
+            { id: 10, diaAula: 'qui', nome: 'JS 2', min: 42.07, reforco: 'sext' },
         ]
 
         let minAula = aulas.filter((aula) => {
@@ -200,14 +200,21 @@
             - Reduz um array inteiro em um UNICO valor.
         */
 
-        const totMin = aulas.reduce((totalizador, aulas)=>{
+        const totMin = aulas.reduce((totalizador, aulas) => {
             let totAula = aulas.min
 
             return totalizador + totAula
-        },0)
+        }, 0)
 
-        // Pode ser encadeado todas funcoes de array, sera SEMPRE executado da esquerda para diretia 
+        // Pode ser encadeado todas funcoes de array, sera SEMPRE executado da esquerda para direita.
+        // Executara primeira funcao MAP, a segunda funcao FILTER ira executar com o resultado da primeira.
+        // Caso haja mais funcoes encadeadoas ira ser executada sempre com o resultado da anterior.
+         
+        const attAulas = aulas.map(item => {
+            return { ...item, min: item.min + 2.32 }
+        }).filter(item => item.reforco)
 
+        console.log(attAulas)
     </script>
 </body>
 
