@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vetor part03</title>
 </head>
+
 <body>
     <script>
         /* Metodos de vetores.
             - Reverse: Inverte os elementos no array.
             - IndexOf: Realiza buscas no vetor, buscando a posição do elemento no array, se não localizar retornar -1.
             - Concat: Une o conteudo de dois vetores em um só.
-            - Join: Une todos os elementos de um vetor, em uma UNICA variavel, em forma de string, separando os lementos por virgurla.
+            - Join: Une todos os elementos de um vetor, em uma UNICA variavel, em forma de string, separando os lementos 
+            por virgurla.
         */
 
-       var mochila=[], mochila2=[], mochilao=[], pos;
-       
-       mochila.push("Faca");
-       mochila.push("Corda");
-       mochila.push("Chave");
-       mochila.push("Lanterna");
-       mochila.push("Cantil");
-       mochila.push("Canivete");
-       mochila.push("Binócolo");
+        var mochila = [], mochila2 = [], mochilao = [], pos;
 
-       //IndexOf: buscando a posição do elemento no array, se não localizar retornar -1.
-       pos = mochila.indexOf("Canivete");
+        mochila.push("Faca");
+        mochila.push("Corda");
+        mochila.push("Chave");
+        mochila.push("Lanterna");
+        mochila.push("Cantil");
+        mochila.push("Canivete");
+        mochila.push("Binócolo");
 
-        if(pos<0){
+        //IndexOf: buscando a posição do elemento no array, se não localizar retornar -1.
+        pos = mochila.indexOf("Canivete");
+
+        if (pos < 0) {
             window.document.write("O item não esta na mochila");
-        }else{
-            window.document.write("O item esta na mochila, na posição: ",pos,"<br>");
+        } else {
+            window.document.write("O item esta na mochila, na posição: ", pos, "<br>");
         }
 
 
-        var num = [1,8,9,7,2,4,3,0,6,5];
-        for(i =0; i < num.length; i++){
-            window.document.write("elemento: ",num[i],"<br>");
+        var num = [1, 8, 9, 7, 2, 4, 3, 0, 6, 5];
+        for (i = 0; i < num.length; i++) {
+            window.document.write("elemento: ", num[i], "<br>");
         }
 
         //Usando sort, para ordenar a lista
         num.sort();
         window.document.write("<br>lista Ordenada:<br>")
-        for(i =0; i < num.length; i++){
-            window.document.write("elemento: ",num[i],"<br>");
+        for (i = 0; i < num.length; i++) {
+            window.document.write("elemento: ", num[i], "<br>");
         }
 
         //Usando reverse, para realizar a reverção da lista.
         num.reverse();
         window.document.write("<br>lista Reversa:<br>")
-        for(i =0; i < num.length; i++){
-            window.document.write("elemento: ",num[i],"<br>");
+        for (i = 0; i < num.length; i++) {
+            window.document.write("elemento: ", num[i], "<br>");
         }
 
         var numeros;
 
         //Usando o metodo Join, unindo os lementos do vetor em uma unica variavel.
         numeros = num.join();
-        window.document.write("<br>Usando Join: ",num,"<br>");
+        window.document.write("<br>Usando Join: ", num, "<br>");
 
         mochila2.push("Meias");
         mochila2.push("Luvas");
@@ -68,13 +71,144 @@
         mochila2.push("Escova");
         mochila2.push("Barbeador");
 
-        //Concatenando arrays.
+        /* CONCAT(Item,ItemAConcatenar):
+            - NAO modifica o array original, apenas retorna um array modificado. 
+            - pode ser usado para concatenar STRINGS ou ARRAYS.
+        */
+
         mochilao = mochila.concat(mochila2);
         window.document.write("<br>Mochilão:<br>")
-        for(x=0; x < mochilao.length; x++){
-            window.document.write(mochilao[x],"<br>")
+        for (x = 0; x < mochilao.length; x++) {
+            window.document.write(mochilao[x], "<br>")
         }
+
+        const carros = ['Moto', 'Carro', 'Carreta']
+        const aeroNaves = ['Helicoptero', 'Aviao', 'Caça']
+        const embarcacoes = ['Jetski', 'Veleiro', 'Balsa']
+
+        carros.forEach((item) => {
+            window.document.write(item, "<br>");
+        })
+
+        // criando um vetor novo apartir da concatenacao de 3 arrays.
+        let transportes = [].concat(carros, aeroNaves, embarcacoes)
+
+        /* Includes(valor)
+            - verifica se o array possui o item.
+            - se o array possuir o item sera retornado TRUE/FALSE.
+        */
+        window.document.write(`<br>INCLUDES retornara FALSE pois é case sensitive: ${mochila.includes('lanterna')}`)
+        window.document.write(`<br>INCLUDES retornara TRUE pois é case sensitive: ${mochila.includes('Lanterna')} <br>`)
+
+        /* indexOf(valor)
+        - verifica se o array poussui o valor/item e retorna o index.
+        */
+        window.document.write(`<br>IndexOf retornara retorna a posicao do item no array: ${mochila.indexOf('Lanterna')}`)
+        window.document.write(`Se houver item REPETIDO, retornara o primeiro item encontrado`)
+
+        /* SPLIT(separador)
+             - permite se parar uma STRING ou ARRAY.
+             - o parametro "separador" nao sera adicionado no resultado.
+        */
+        let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`
+
+        html = html.split('section').join('ul')
+
+        /* copyWithin(alvo, inicio, final)
+            - apartir do parametro alvo, ira copiar o item do array até o parametro final.
+            - caso omita os valores de início e final, ele irá utilizar como inicio o 0 e final o valor total da array.
+        */
+        ['Item1', 'Item2', 'Item3', 'Item4'].copyWithin(2, 0, 3)
+
+        /*  slice(inicio, final)
+            - retorna os itens do array, comecando do parametro inicio e indo até o parametro final.
+            - caso omita os valores final, ele irá copiar todo o array.
+        */
+        let marcas = ['Ford', 'Kia', 'Nissan', 'Honda']
+        let marcas2 = marcas.slice(0)
+
+
+        /* forEach(callback(itemAtual, index, array)) 
+            - a função de callback é executada para cada item da array. 
+            - esta funcao nao tem retorno.
+        */
+        const motos = ['Kawasaki', 'Honda', 'Royal', 'Suzuki', 'BMW'];
+
+        let moto = motos.forEach(function (item, index, array) {
+            console.log(item.toUpperCase()); // apenas ira alterar ou realizar alguma verificao.
+        });
+
+        console.log(moto) // retornara "undefined" pois não tem retorno, foco e na interacao.
+
+        /*  MAP(callback(itemAtual, index, array)) 
+        - funciona da mesma forma que o forEach(), porém ao invés de retornar undefined, retorna uma nova array com valores atualizados.
+        - retornara de acordo com o return de cada iteração.
+        */
+        const eletrodomesticos = ['ventilador', 'radio', 'televisao', 'microondas', 'batedeira'];
+
+        let eletros = eletrodomesticos.map((item, index) => {
+            return item + index; // o RETURN é necessario.
+        })
+
+        /* Find() 
+             - retorna o valor atual da primeira iteração que retornar um valor truthy. 
+         */
+        const numeros = [6, 43, 22, 88, 101, 29];
+        const buscaMaior45 = numeros.find(x => x > 45); // 88
+
+
+        /* FindIndex()
+            - retornar o valor, retorna o index deste valor na array.
+        */
+        const frutas = ['Banana', 'Pêra', 'Uva', 'Maçã'];
+        const buscaUva = frutas.findIndex((fruta) => {
+            return fruta === 'Uva';
+        }); // 2   
+
+        /* Filter()
+            - retorna uma array com a lista de valores que durante a sua iteração retornaram um valor truthy.
+            - itens considerados false(undefined,null,0,' ') NAO sao retornados.
+        */
+
+        const dogs = ['PitBull', undefined, null, '', 'Xauxau', 0, 'Pincher', 'Fila', null, 'Bace']
+        let caes = dogs.filter((dogs) => {
+            return dogs // retorna ["PitBull","Xauxau","Pincher","Fila",3,"Bace"]
+        })
+
+        const aulas = [
+            { id: 1, diaAula: 'seg', nome: 'PhotoShop', min: 7.50 , reforco:'sext'},
+            { id: 2, diaAula: 'ter', nome: 'MongoDB', min: 17.50 , reforco:'sext'},
+            { id: 3, diaAula: 'seg', nome: 'SQL', min: 12.33 , reforco:'sext'},
+            { id: 4, diaAula: 'quar', nome: 'HTML 1', min: 15 , reforco: null},
+            { id: 5, diaAula: 'ter', nome: 'HTML 2', min: 10 , reforco:'sext'},
+            { id: 6, diaAula: 'qui', nome: 'CSS 1', min: 22 , reforco: null},
+            { id: 7, diaAula: 'qui', nome: 'CSS 2', min: 25.51 , reforco:'sext'},
+            { id: 8, diaAula: 'qui', nome: 'JS 1', min: 27.02 , reforco:null},
+            { id: 9, diaAula: 'qui', nome: 'CSS 3', min: 20.01 , reforco:'sext'},
+            { id: 10, diaAula:'qui', nome: 'JS 2', min: 42.07 , reforco:'sext'},
+        ]
+
+        let minAula = aulas.filter((aula) => {
+            return aula.min > 10 // retornar um objeto com todos os objetos com aula superior 10 min.
+        })
+
+        /* Reduce(acumulador, valorAtual, posicaoAtual, arrayCompleto)
+            - Reduz um array inteiro em um UNICO valor.
+        */
+
+        const totMin = aulas.reduce((totalizador, aulas)=>{
+            let totAula = aulas.min
+
+            return totalizador + totAula
+        },0)
+
+        // Pode ser encadeado todas funcoes de array, sera SEMPRE executado da esquerda para diretia 
 
     </script>
 </body>
+
 </html>
