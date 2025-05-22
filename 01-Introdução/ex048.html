@@ -13,7 +13,8 @@
     <section>
         <h1>OBJECT:</h1>
         <p> Todo objeto é criado com o construtor Object e por isso herda as propriedades,
-            e métodos do seu prototype.</p>
+            e métodos do seu prototype.</p><br>
+        <p>Usar o console do Navegador.</p>            
     </section>
 
     <script>
@@ -79,7 +80,33 @@
 
         Object.assign(suv, funcaoAutomovel);
 
+        // Metodo defineProperties
+        
+        const lambreta = {
+            rodas : 2
+        }
+        console.log(lambreta)
 
+        /* Object.defineProperties(alvo, propriedades): 
+            - adiciona ao alvo novas propriedades. 
+            - a diferença é que possibilidade de serem definidas as características dessas propriedades.
+        */
+
+        Object.defineProperties(lambreta,{
+            rodas:{
+                value: 2,
+                configurable: false,// NÃO permite alterar/deletar o tipo da varialvel para String/float e etc.
+                writable: false,// NÃO permite editar conteudo da varialvel.
+            },
+            cilindradas:{
+                value: 60,
+                configurable: true,
+            }
+
+        })
+        console.log(lambreta)
+
+        
     </script>
 
 </body>
