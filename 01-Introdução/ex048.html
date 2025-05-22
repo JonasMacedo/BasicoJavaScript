@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+
+<body style="background: gray">
+
+    <section>
+        <h1>OBJECT:</h1>
+        <p> Todo objeto é criado com o construtor Object e por isso herda as propriedades, 
+        e métodos do seu prototype.</p>
+    </section>
+
+    <script>
+      
+      /* OBJECT:
+        - Todo objeto é criado com o construtor Object e por isso herda as propriedades, 
+        e métodos do seu prototype.
+      */
+
+      const pessoa = new Object({
+        nome: 'André',
+        idade: 28,
+      })
+      
+      const carro = {
+        marca: 'Ford',
+        ano: 2018,
+        rodas: 4,
+        acelerar() {
+          return `${this.marca} acelerou as ${this.rodas} rodas`;
+        },
+        buzinar() {
+          return this.marca + ' buzinou';
+        }
+                
+      }
+
+      /* Create(obj, defineProperties):
+        - retorna um novo objeto que terá como protótipo o objeto do primeiro argumento.
+        - permite criar um novo objeto herdando todos os metodos do objeto informado.
+      */
+      const honda = Object.create(carro); // substitua o argumento, veja o objeto herdando as propriedades.
+      console.log(honda)
+        
+      /* Object.assign(alvo, obj1, obj2): 
+        - adiciona ao alvo as propriedades e métodos enumeráveis dos outros objetos passados como argumentos. 
+        - O assign irá modificar o objeto alvo.
+      */
+
+    </script>
+
+</body>
+
+</html>
