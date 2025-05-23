@@ -14,7 +14,7 @@
         <h1>OBJECT:</h1>
         <p> Todo objeto é criado com o construtor Object e por isso herda as propriedades,
             e métodos do seu prototype.</p><br>
-        <p>Usar o console do Navegador.</p>            
+        <p>Usar o console do Navegador.</p>
     </section>
 
     <script>
@@ -48,7 +48,7 @@
         */
         const honda = Object.create(carro); // substitua o argumento, veja o objeto herdando as propriedades.
         console.log(honda)
-     
+
         // metodo ASSIGN.
 
         const funcaoAutomovel = {
@@ -64,16 +64,16 @@
             rodas: 2,
             capacete: true,
         }
-        
+
         const suv = {
             rodas: 4,
             mala: true,
         }
-        
+
         /* Object.assign(alvo, obj1, obj2): 
           - adiciona ao alvo as propriedades e métodos enumeráveis dos outros objetos 
           passados como argumentos. 
-          - O assign irá modificar o objeto alvo.
+          - O assign irá adicionar ao o objeto alvo, os metodos de outro objeto.
         */
         Object.assign(moto, funcaoAutomovel); // Ira adicionar a os metodos e propriedade ao novo objeto.
         console.log(moto)
@@ -81,9 +81,9 @@
         Object.assign(suv, funcaoAutomovel);
 
         // Metodo defineProperties
-        
+
         const lambreta = {
-            rodas : 2
+            capacete: true
         }
         console.log(lambreta)
 
@@ -92,13 +92,13 @@
             - a diferença é que possibilidade de serem definidas as características dessas propriedades.
         */
 
-        Object.defineProperties(lambreta,{
-            rodas:{
+        Object.defineProperties(lambreta, {
+            rodas: {
                 value: 2,
                 configurable: false,// NÃO permite alterar/deletar o tipo da varialvel para String/float e etc.
                 writable: false,// NÃO permite editar conteudo da varialvel.
             },
-            cilindradas:{
+            cilindradas: {
                 value: 60,
                 configurable: true,
             }
@@ -106,7 +106,26 @@
         })
         console.log(lambreta)
 
+
+        /* Object.getOwnPropertyDescriptors(obj)
+            - lista todos os métodos e propriedades de um objeto, com as suas devidas configurações.
+            - a propriedade ENUMERABLE indica se é visivel a informacao.
+      */
+        Object.getOwnPropertyDescriptors(Array);
+        // Lista com métodos e propriedades e Array.
+
+        let metods = Object.getOwnPropertyDescriptors(Array.prototype)
+        console.log(metods);                
+        // Lista com métodos e propriedades do protótipo de Array.
         
+        Object.getOwnPropertyDescriptor(window, 'innerHeight');
+        // Puxa de uma única propriedade.
+        
+        
+        let nomeMetodos = Object.getOwnPropertyNames(Array)
+        console.log(nomeMetodos)
+        // Lista(array) com apenas as propriedades do objeto.
+
     </script>
 
 </body>
