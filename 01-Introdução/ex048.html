@@ -115,16 +115,45 @@
         // Lista com métodos e propriedades e Array.
 
         let metods = Object.getOwnPropertyDescriptors(Array.prototype)
-        console.log(metods);                
+        console.log(metods);
         // Lista com métodos e propriedades do protótipo de Array.
-        
+
         Object.getOwnPropertyDescriptor(window, 'innerHeight');
         // Puxa de uma única propriedade.
-        
-        
+
+
         let nomeMetodos = Object.getOwnPropertyNames(Array)
         console.log(nomeMetodos)
         // Lista(array) com apenas as propriedades do objeto.
+
+        /* Object.getPrototypeOf():
+            - retorna o protótipo do objeto.
+        */
+        const frutas = ['Maçã', 'Kiwi']
+        console.log(Object.getPrototypeOf(frutas)) // Retorna o protótipo do objeto.
+
+        const tool = {
+            nome: 'Chave de boca',
+            comprimento: 12,
+            fabricante: 'Gerdal'
+        }
+
+        /* Object.seal():
+            - Bloquea a adição de novas propriedades e impede que as atuais sejam deletadas.
+            - Porem permite que o conteudo das propridades existente sejam editadas.
+        */
+        Object.seal(tool)
+        tool.comprimento = 15 // Apenas editando o conteudo .
+        tool.ano = 2008 // NAO permite adicionar novas propriedades.
+        delete tool.fabricante // NAO permite remover a propriedade, apenas editar seu conteudo.
+        console.log(tool)
+
+        /* Object.preventExtensions()
+            - Permite a exclução de propriedades, mas ñ permite adicionar novas.
+        */
+        Object.preventExtensions(tool)
+        tool.tipoMaterial = 'aço'// NAO permite adicionar novas propriedades.
+        console.log(tool)
 
     </script>
 
