@@ -47,7 +47,7 @@
           - permite criar um novo objeto herdando todos os metodos do objeto informado.
         */
         const honda = Object.create(carro); // substitua o argumento, veja o objeto herdando as propriedades.
-        console.log(honda)
+        console.log('Retornando o OBJETO que herdou o prototipo, de outro objeto:',honda)
 
         // metodo ASSIGN.
 
@@ -76,7 +76,7 @@
           - O assign irá adicionar ao o objeto alvo, os metodos de outro objeto.
         */
         Object.assign(moto, funcaoAutomovel); // Ira adicionar a os metodos e propriedade ao novo objeto.
-        console.log(moto)
+        console.log('Adicionando metodo de outro objeto: ',moto)
 
         Object.assign(suv, funcaoAutomovel);
 
@@ -104,7 +104,7 @@
             }
 
         })
-        console.log(lambreta)
+        console.log('Definindo as propriedades do objeto:',lambreta)
 
 
         /* Object.getOwnPropertyDescriptors(obj)
@@ -115,22 +115,22 @@
         // Lista com métodos e propriedades e Array.
 
         let metods = Object.getOwnPropertyDescriptors(Array.prototype)
-        console.log(metods);
-        // Lista com métodos e propriedades do protótipo de Array.
+        console.log('Lista com métodos e propriedades do protótipo de Array:', metods);// Lista com métodos e propriedades do protótipo de Array.
 
         Object.getOwnPropertyDescriptor(window, 'innerHeight');
         // Puxa de uma única propriedade.
 
 
-        let nomeMetodos = Object.getOwnPropertyNames(Array)
-        console.log(nomeMetodos)
         // Lista(array) com apenas as propriedades do objeto.
+        let nomeMetodos = Object.getOwnPropertyNames(Array)
+        console.log('Lista apenas as propriedades do objeto:',nomeMetodos)
 
         /* Object.getPrototypeOf():
             - retorna o protótipo do objeto.
         */
         const frutas = ['Maçã', 'Kiwi']
-        console.log(Object.getPrototypeOf(frutas)) // Retorna o protótipo do objeto.
+        console.log('Retorna o contrutor: ',frutas.constructor)// Retorna o contrutor, util para saber os metodos e prototipo.
+        console.log('Retorna o protótipo do objeto: ',Object.getPrototypeOf(frutas)) // Retorna o protótipo do objeto.
 
         const tool = {
             nome: 'Chave de boca',
@@ -143,17 +143,24 @@
             - Porem permite que o conteudo das propridades existente sejam editadas.
         */
         Object.seal(tool)
-        tool.comprimento = 15 // Apenas editando o conteudo .
+        tool.comprimento = 15 // Apenas editando o conteudo.
         tool.ano = 2008 // NAO permite adicionar novas propriedades.
         delete tool.fabricante // NAO permite remover a propriedade, apenas editar seu conteudo.
-        console.log(tool)
+        console.log('Objeto alterado com o SEAL:',tool)
 
         /* Object.preventExtensions()
             - Permite a exclução de propriedades, mas ñ permite adicionar novas.
         */
         Object.preventExtensions(tool)
         tool.tipoMaterial = 'aço'// NAO permite adicionar novas propriedades.
-        console.log(tool)
+        console.log('Objeto alterado com PreventExtensions: ',tool)
+
+        /*
+            hasOwnProperty():
+            - Verifica se possui a propriedade e retorna true. 
+            - A propriedade deve ser direta do objeto e não do protótipo. 
+        */
+        
 
     </script>
 
