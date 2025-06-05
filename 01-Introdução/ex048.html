@@ -42,8 +42,7 @@
 
         }
 
-        /* 
-            Create(obj, defineProperties):
+        /* Create(obj, defineProperties):
             - retorna um novo objeto que terá como protótipo o objeto do primeiro argumento.
             - permite criar um novo objeto herdando todos os metodos do objeto informado.
         */
@@ -71,8 +70,7 @@
             mala: true,
         }
 
-        /* 
-            Object.assign(alvo, obj1, obj2): 
+        /* Object.assign(alvo, obj1, obj2): 
             - adiciona ao alvo as propriedades e métodos enumeráveis dos outros objetos 
             passados como argumentos. 
             - O assign irá adicionar ao o objeto alvo, os metodos de outro objeto.
@@ -89,8 +87,7 @@
         }
         console.log(lambreta)
 
-        /* 
-            Object.defineProperties(alvo, propriedades): 
+        /* Object.defineProperties(alvo, propriedades): 
             - adiciona ao alvo novas propriedades. 
             - a diferença é que possibilidade de serem definidas as características dessas propriedades.
         */
@@ -114,7 +111,7 @@
             Object.getOwnPropertyDescriptors(obj)
             - lista todos os métodos e propriedades de um objeto, com as suas devidas configurações.
             - a propriedade ENUMERABLE indica se é visivel a informacao.
-      */
+        */
         Object.getOwnPropertyDescriptors(Array);
         // Lista com métodos e propriedades e Array.
 
@@ -129,8 +126,7 @@
         let nomeMetodos = Object.getOwnPropertyNames(Array)
         console.log('Lista apenas as propriedades do objeto:', nomeMetodos)
 
-        /* 
-            Object.getPrototypeOf():
+        /* Object.getPrototypeOf():
             - retorna o protótipo do objeto.
         */
         const frutas = ['Maçã', 'Kiwi']
@@ -143,8 +139,7 @@
             fabricante: 'Gerdal'
         }
 
-        /* 
-            Object.seal():
+        /* Object.seal():
             - Bloquea a adição de novas propriedades e impede que as atuais sejam deletadas.
             - Porem permite que o conteudo das propridades existente sejam editadas.
         */
@@ -154,22 +149,19 @@
         delete tool.fabricante // NAO permite remover a propriedade, apenas editar seu conteudo.
         console.log('Objeto alterado com o SEAL:', tool)
 
-        /* 
-            Object.preventExtensions()
+        /* Object.preventExtensions()
             - Permite a exclução de propriedades, mas ñ permite adicionar novas.
         */
         Object.preventExtensions(tool)
         tool.tipoMaterial = 'aço'// NAO permite adicionar novas propriedades.
         console.log('Objeto alterado com PreventExtensions: ', tool)
         
-        /* 
-            Object.freeze(): 
+        /* Object.freeze(): 
             - Impede qualquer mudança nas propriedades. 
         */
         Object.freeze('impede qualquer mudança nas propriedades: ', tool) 
 
-        /*
-            hasOwnProperty():
+        /* hasOwnProperty():
             - Verifica se possui a propriedade e retorna true. 
             - A propriedade deve ser direta do objeto e não do protótipo. 
         */
