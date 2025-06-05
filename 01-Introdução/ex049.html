@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataSet</title>
+</head>
+
+<body style='background: gray'>
+    <section>
+        <h1>OBJECT:</h1>
+        <p> Todo objeto é criado com o construtor Object e por isso herda as propriedades,
+            e métodos do seu prototype.</p><br>
+        <p>Usar o console do Navegador.</p>
+
+        <div data-cor="azul">Teste</div>
+        <div data-cor="azul">Teste 01</div>
+        <div data-cor="azul">Teste 02</div>
+        <div data-cor="azul">Teste 03</div>
+        <div data-cor="azul">Teste 04</div>
+        <div data-cor="azul">Teste 05</div>
+        <div data-cor="azul">Teste 06</div>
+        <div data-cor="azul">Teste 07</div>
+
+    </section>
+
+    <script>
+
+        const h1 = document.querySelector('h1')
+        console.log(Object.prototype.toString.call(h1)) // Ira retornar um objeto do tipo HTMLHeadingElement, que contem diversos metodos da DOM.
+
+        console.log(h1.dataset)
+
+        /* Dataset:
+          - dataset é uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap.             - Dentro desse objeto existe uma coleção de chave/valor, com todos os atributos do elemento html 
+          que começarem com "data-".
+        */
+        const div = document.querySelector('[data-cor]') // Selecionando pelo atributo.
+        console.log(div)
+
+        /* Data Atributes:
+            - os atributos e valores que começarem com "data - " poderão ser utilizados 
+            como forma de configuração de plugins e interações DOM/JS.
+        */
+
+        div.dataset.hight = 700; // Adicionando uma nova propriedade.
+        div.dataset.width = 975;
+        div.dataset.cor = "black"; // Alterando uma propriedade.
+
+        delete div.dataset.width; // Removendo atributo.
+
+        /* Nomenclatura:
+            - por padrão o JavaScript não aceita "-"(traço) como caracter válido 
+            para nomear propriedades. 
+            - qualquer traço será removido e a letra seguinte transformada em maiúscula.
+        */
+        div.dataset.animaScroll = "left";
+        console.log(div.dataset)
+
+        const divs = document.querySelectorAll('[data-cor]')
+        divs.forEach((item, index) => {
+            (index % 2 === 0)? item.dataset.anima = "left" : item.dataset.anima = "right"
+        })
+        console.log(divs)
+
+        let vid = document.querySelectorAll("div")
+        console.log(vid)
+
+    </script>
+
+</body>
+
+</html>
