@@ -33,11 +33,12 @@
         console.log(h1.dataset)
 
         /* Dataset:
-          - dataset é uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap.             - Dentro desse objeto existe uma coleção de chave/valor, com todos os atributos do elemento html 
+          - dataset é uma propriedade de HTMLElement, essa propriedade é um objeto do tipo DOMStringMap.             
+          - Dentro desse objeto existe uma coleção de chave/valor, com todos os atributos do elemento html 
           que começarem com "data-".
         */
         const div = document.querySelector('[data-cor]') // Selecionando pelo atributo.
-        console.log(div)
+        console.log(div.datas)
 
         /* Data Atributes:
             - os atributos e valores que começarem com "data - " poderão ser utilizados 
@@ -60,11 +61,11 @@
 
         const divs = document.querySelectorAll('[data-cor]')
         divs.forEach((item, index) => {
-            (index % 2 === 0)? item.dataset.anima = "left" : item.dataset.anima = "right"
+            (index % 2 === 0) ? item.dataset.anima = "left" : item.dataset.anima = "right"
         })
         console.log(divs)
 
-        let vid = document.querySelectorAll("div")
+        let vid = document.querySelector("div")
         console.log(vid)
 
     </script>
