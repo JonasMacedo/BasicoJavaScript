@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+
+<body style="background: gray">
+
+    <section>
+        <h1>OBJECT:</h1>
+        <p> Todo objeto é criado com o construtor Object e por isso herda as propriedades,
+            e métodos do seu prototype.</p><br>
+        <p>Usar o console do Navegador.</p>
+    </section>
+
+    <script>
+
+        /* OBJECT:
+          - Todo objeto é criado com o construtor Object e por isso herda as propriedades, 
+          e métodos do seu prototype.
+        */
+
+        const pessoa = new Object({
+            nome: 'André',
+            idade: 28,
+        })
+
+        const carro = {
+            marca: 'Ford',
+            ano: 2018,
+            rodas: 4,
+            acelerar() {
+                return `${this.marca} acelerou as ${this.rodas} rodas`;
+            },
+            buzinar() {
+                return this.marca + ' buzinou';
+            }
+
+        }
+
+        /* Create(obj, defineProperties):
+            - retorna um novo objeto que terá como protótipo o objeto do primeiro argumento.
+            - permite criar um novo objeto herdando todos os metodos do objeto informado.
+        */
+        const honda = Object.create(carro); // substitua o argumento, veja o objeto herdando as propriedades.
+        console.log('Retornando o OBJETO que herdou o prototipo, de outro objeto:', honda)
+
+        // metodo ASSIGN.
+
+        const funcaoAutomovel = {
+            acelerar() {
+                return 'acelerou';
+            },
+            buzinar() {
+                return 'buzinou';
+            },
+        }
+
+        const moto = {
+            rodas: 2,
+            capacete: true,
+        }
+
+        const suv = {
+            rodas: 4,
+            mala: true,
+        }
+
+        /* Object.assign(alvo, obj1, obj2): 
+            - adiciona ao alvo as propriedades e métodos enumeráveis dos outros objetos 
+            passados como argumentos. 
+            - O assign irá adicionar ao o objeto alvo, os metodos de outro objeto.
+        */
+        Object.assign(moto, funcaoAutomovel); // Ira adicionar a os metodos e propriedade ao novo objeto.
+        console.log('Adicionando metodo de outro objeto: ', moto)
+
+        Object.assign(suv, funcaoAutomovel);
+
+        // Metodo defineProperties
+
+        const lambreta = {
+            capacete: true
+        }
+        console.log(lambreta)
+
+        /* Object.defineProperties(alvo, propriedades): 
+            - adiciona ao alvo novas propriedades. 
+            - a diferença é que possibilidade de serem definidas as características dessas propriedades.
+        */
+
+        Object.defineProperties(lambreta, {
+            rodas: {
+                value: 2,
+                configurable: false,// NÃO permite alterar/deletar o tipo da varialvel para String/float e etc.
+                writable: false,// NÃO permite editar conteudo da varialvel.
+            },
+            cilindradas: {
+                value: 60,
+                configurable: true,
+            }
+
+        })
+        console.log('Definindo as propriedades do objeto:', lambreta)
+
+
+        /* 
+            Object.getOwnPropertyDescriptors(obj)
+            - lista todos os métodos e propriedades de um objeto, com as suas devidas configurações.
+            - a propriedade ENUMERABLE indica se é visivel a informacao.
+        */
+        Object.getOwnPropertyDescriptors(Array);
+        // Lista com métodos e propriedades e Array.
+
+        let metods = Object.getOwnPropertyDescriptors(Array.prototype)
+        console.log('Lista com métodos e propriedades do protótipo de Array:', metods);// Lista com métodos e propriedades do protótipo de Array.
+
+        Object.getOwnPropertyDescriptor(window, 'innerHeight');
+        // Puxa de uma única propriedade.
+
+
+        // Lista(array) com apenas as propriedades do objeto.
+        let nomeMetodos = Object.getOwnPropertyNames(Array)
+        console.log('Lista apenas as propriedades do objeto:', nomeMetodos)
+
+        /* Object.getPrototypeOf():
+            - retorna o protótipo do objeto.
+        */
+        const frutas = ['Maçã', 'Kiwi']
+        console.log('Retorna o contrutor: ', frutas.constructor)// Retorna o contrutor, util para saber os metodos e prototipo.
+        console.log('Retorna o protótipo do objeto: ', Object.getPrototypeOf(frutas)) // Retorna o protótipo do objeto.
+
+        const tool = {
+            nome: 'Chave de boca',
+            comprimento: 12,
+            fabricante: 'Gerdal'
+        }
+
+        /* Object.seal():
+            - Bloquea a adição de novas propriedades e impede que as atuais sejam deletadas.
+            - Porem permite que o conteudo das propridades existente sejam editadas.
+        */
+        Object.seal(tool)
+        tool.comprimento = 15 // Apenas editando o conteudo.
+        tool.ano = 2008 // NAO permite adicionar novas propriedades.
+        delete tool.fabricante // NAO permite remover a propriedade, apenas editar seu conteudo.
+        console.log('Objeto alterado com o SEAL:', tool)
+
+        /* Object.preventExtensions()
+            - Permite a exclução de propriedades, mas ñ permite adicionar novas.
+        */
+        Object.preventExtensions(tool)
+        tool.tipoMaterial = 'aço'// NAO permite adicionar novas propriedades.
+        console.log('Objeto alterado com PreventExtensions: ', tool)
+        
+        /* Object.freeze(): 
+            - Impede qualquer mudança nas propriedades. 
+        */
+        Object.freeze('impede qualquer mudança nas propriedades: ', tool) 
+
+        /* hasOwnProperty():
+            - Verifica se possui a propriedade e retorna true. 
+            - A propriedade deve ser direta do objeto e não do protótipo. 
+        */
+
+        console.log('Verifica se a funcao MAP pertence ao Objeto: ',frutas.hasOwnProperty('map')); // false
+        console.log('Verifica se a funcao MAP pertence ao Array: ',Array.hasOwnProperty('map')); // false
+        console.log('Verifica se a funcao MAP pertence ao prototipo de Array: ',Array.prototype.hasOwnProperty('map')); // false
+
+
+
+        // EXERCICIOS:
+
+        // Crie uma função que verifique, corretamente o tipo de dado
+        const verifyDado = function (dado) {
+            return Object.prototype.toString.call(dado)
+        }
+        console.log(verifyDado(tool))
+        
+        // Crie um objeto quadrado com, a propriedade lados e torne ela imutável.
+        const quadrado = {}
+        Object.defineProperties(quadrado,{
+            lados:{
+                value:4,
+                enumerable: true,
+            }
+        })
+        console.log('Objeto criado imutavel: ', quadrado)
+        
+        // Previna qualquer mudança no objeto abaixo
+        const configuracao = {
+            width: 800,
+            height: 600,
+            background: '#333'
+        }
+        Object.freeze(configuracao)
+        console.log('Objeto tornado imutavel: ', configuracao)
+
+        // Liste o nome de todas as propriedades do protótipo de String e Array.
+       console.log('Retorna o todas as propriedades do objeto: ', Object.getOwnPropertyDescriptors(String.prototype)) 
+       console.log('Retorna apenas o nome das propriedades do objeto: ', Object.getOwnPropertyNames(String.prototype)) 
+
+       console.log('Retorna o todas as propriedades do objeto: ', Object.getOwnPropertyDescriptors(Array.prototype)) 
+       console.log('Retorna apenas o nome das propriedades do objeto: ', Object.getOwnPropertyNames(Array.prototype)) 
+
+    </script>
+
+</body>
+
+</html>

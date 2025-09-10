@@ -24,8 +24,8 @@
         // Retornando apenas a idade de dentro do vetor de objetos.
 
         const idades = usuario.map(function(usuario){
-            /* Map(item,indice): Usado para per correr um vetor 
-                e retornar algo dele.
+            /* Map(item,indice): 
+                - Usado para per correr um vetor e retornar algo dele.
             */
             return usuario.idade;
         });
@@ -39,8 +39,8 @@
         // Retornando apenas quem trabalha no Google.
 
         const trabalhadores = usuario.filter(function(usuario,empresa){
-            /*  Filter: filtra os elementos de um vetor, 
-                retornando sempre um true ou false.
+            /*  Filter: 
+                - filtra os elementos de um vetor, retornando sempre um true ou false.
             */
             if((usuario.empresa == 'Google') && (usuario.idade>18)){
                 return usuario;
@@ -58,8 +58,9 @@
         // Localizando o primeiro funcionario da Google.
 
         const Google = usuario.find(function(usuario){
-            /* Find(array): Usado para verificar se exite uma informação
-            no array ou para encontra-la, restornando um true ou false.
+            /* Find(array): 
+                - Usado para verificar se exite uma informação 
+                no array ou para encontra-la, restornando um true ou false.
             */
             if(usuario.empresa == "Google"){
                 return usuario;
@@ -67,7 +68,7 @@
         });
         console.log("Empresa: ",Google);
 
-            // Arrow funtion e Array.
+        // Arrow funtion e Array.
         const googleResp = usuario.find(usuario => usuario.empresa == "Google");
         console.log("Corrigido",googleResp);
 

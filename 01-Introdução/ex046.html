@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcao CALL</title>
+</head>
+<body style = "background: gray">
+  
+  <ul>
+    <li>Item 01</li>
+    <li class='ativo'>Item 02</li>
+    <li>Item 03</li>
+    <li class='ativo'>Item 04</li>
+  </ul>
+  
+  <script>
+    
+    /* Funcao Call:
+        - a função permite passarmos uma nova referência ao THIS(variavel de criacao) da mesma.
+        - o valor de THIS faz referência ao objeto criado durante a construção do objeto (Constructor Function). 
+        - Podemos trocar a referência do método ao THIS, utilizando o call().
+        - valor de this deve ser semelhante a estrutura do valor do this original
+
+        - Resumo:
+        -- É como ter um carro popular, e chegar no mecanico(CALL) e solicitar o motor de um carro esportivo.
+    */
+    
+    const carros =['Gol','Porshe','Skyline','Opala']  
+    const frutas =['Uva','Maçã','Banana']
+    
+    carros.forEach.call(carros,(item)=>{
+      document.writeln(item) // ira listar os itens do array
+    })
+   
+    carros.forEach.call(frutas,(item)=>{
+      document.writeln(item)
+    })
+
+    Array.prototype.mostrarThis= function(){
+      console.log(this)
+    }
+    
+    const Li = document.querySelectorAll('li') // retorna uma NodeList, que ñ possui funções de Array.
+    
+    const filtro = Array.prototype.filter.call(Li, (item)=>{
+        // usando o Filter() metodo de Array, direto no NodeList devido o CALL.
+        return item.classList.contains('ativo')
+    })
+    console.log(filtro)
+    
+  </script>
+
+</body>
+</html>
