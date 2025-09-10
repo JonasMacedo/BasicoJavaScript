@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Animais Fantásticos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animais Fantásticos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grid-container">
     <nav class="menu js-menu">
       <ul>
         <li><a href="#animais">Animais</a></li>
@@ -21,12 +24,12 @@
     <section class="sectionAnimais" id="animais">
       <h1 class="titulo">Animais Fantásticos</h1>
       <ul class="animaisLista js-tabmenu">
-        <li><img src="./img/imagem1.jpg"/></li>
-        <li><img src="./img/imagem2.jpg"/></li>
-        <li><img src="./img/imagem3.jpg"/></li>
-        <li><img src="./img/imagem4.jpg"/></li>
-        <li><img src="./img/imagem5.jpg"/></li>
-        <li><img src="./img/imagem6.jpg"/></li>
+        <li><img src="./img/imagem1.jpg" /></li>
+        <li><img src="./img/imagem2.jpg" /></li>
+        <li><img src="./img/imagem3.jpg" /></li>
+        <li><img src="./img/imagem4.jpg" /></li>
+        <li><img src="./img/imagem5.jpg" /></li>
+        <li><img src="./img/imagem6.jpg" /></li>
       </ul>
 
       <div class="describ js-tabcontent">
@@ -118,47 +121,70 @@
     </section>
 
     <section class="faq" id="faq">
-        <h1 class="titulo">FAQ</h1>
-        <dl class="faqLista js-accordion">
-            <dt>Qual a idade dos animais?</dt>
-            <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
-            
-            <dt>Eles são fantásticos?</dt>
-            <dd>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</dd>
-            
-            <dt>Qual a diferença?</dt>
-            <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
-            
-            <dt>Como proteger?</dt>
-            <dd>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</dd>
+      <h1 class="titulo">FAQ</h1>
+      <dl class="faqLista js-accordion">
+        <dt>Qual a idade dos animais?</dt>
+        <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio,
+          caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
 
-        </dl>
+        <dt>Eles são fantásticos?</dt>
+        <dd>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.
+        </dd>
+
+        <dt>Qual a diferença?</dt>
+        <dd>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio,
+          caracterizados por um focinho comprido e uma cauda longa e peluda.</dd>
+
+        <dt>Como proteger?</dt>
+        <dd>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.
+        </dd>
+
+      </dl>
 
     </section>
 
     <section class="contato" id="contato">
-        <h1 class="titulo">Contato</h1>
+      <h1 class="titulo">Contato</h1>
 
-        <div class="mapa">
-          <img src="img/mapa.png">
-        </div>
+      <div class="mapa">
+        <img src="img/mapa.png">
+      </div>
 
-        <ul class="dados">
-            <li>Contato@gmail.com</li>
-            <li>+55 (45) 99999-99999</li>
-            <li>Rua Visconde, numero: 273</li>
-            <li>Cascavel - PR</li>
-        </ul>
+      <ul class="dados">
+        <li>Contato@gmail.com</li>
+        <li>+55 (45) 99999-99999</li>
+        <li>Rua Visconde, numero: 273</li>
+        <li>Cascavel - PR</li>
+      </ul>
     </section>
 
     <footer class="copy">
-        <p>Todos os direitos reservados.</p>
+      <p>Todos os direitos reservados.</p>
     </footer>
-    <script src="main.js"></script>
-    <script src="main02.js"></script>
-    <script src="main03.js"></script>
-    <!-- <script src="main04.js"></script> -->
-    <script src="main05.js"></script>
-    <script src="main06.js"></script>
-  </body>
+  </div>
+
+  <section class="modal_container" data-moodal="container">
+    <div class="modal">
+      <button data-moodal="fechar" class="fechar">X</button>
+      <form action="">
+        <label for="email">Email</label>
+        <input type="text" for="email" id="email">
+
+        <label for="senha">Senha</label>
+        <input type="password" for="senha" id="senha">
+
+        <button type="submit">Entrar</button>
+
+      </form>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  <script src="main02.js"></script>
+  <script src="main03.js"></script>
+  <!-- <script src="main04.js"></script> -->
+  <script src="main05.js"></script>
+  <script src="main06.js"></script>
+</body>
+
 </html>
